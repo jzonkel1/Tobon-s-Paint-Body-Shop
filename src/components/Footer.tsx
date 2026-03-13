@@ -169,7 +169,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 className="bg-[#1877F2] hover:bg-[#0c5dcd] p-3 rounded-full transition-colors shadow-lg flex items-center justify-center"
                 aria-label="Visit our Facebook page"
               >
-                <Facebook size={24} className="text-white" />
+                <Facebook size={20} className="text-white" />
               </a>
               <a
                 href="https://www.yelp.com/biz/tobons-paint-and-body-shop-corpus-christi"
