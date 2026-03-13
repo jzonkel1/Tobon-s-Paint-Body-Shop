@@ -24,6 +24,30 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       description: 'Cadillac Escalade Side Impact Repair'
     },
     {
+      id: 2,
+      before: '/before2.jpg',
+      after: '/after2.jpg',
+      description: 'Sedan Front Quarter Panel Repair'
+    },
+    {
+      id: 3,
+      before: '/before3.jpg',
+      after: '/after3.jpg',
+      description: 'SUV Side Door and Fender Restoration'
+    },
+    {
+      id: 4,
+      before: '/before4.jpg',
+      after: '/after4.jpg',
+      description: 'Truck Bed and Tailgate Collision Repair'
+    },
+    {
+      id: 5,
+      before: '/before5.jpg',
+      after: '/after5.jpg',
+      description: 'Compact SUV Rear Quarter Panel Repair'
+    },
+    {
       id: 6,
       before: '/before6.jpg',
       after: '/after6.jpg',
@@ -36,10 +60,28 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       description: 'Complete Body Restoration'
     },
     {
+      id: 8,
+      before: '/before8.jpg',
+      after: '/after8.jpg',
+      description: 'White Sedan Door and Quarter Panel Repair'
+    },
+    {
+      id: 9,
+      before: '/before9.jpg',
+      after: '/after9.jpg',
+      description: 'SUV Side Collision Repair'
+    },
+    {
       id: 10,
       before: '/before10.jpg',
       after: '/after10.jpg',
       description: 'Dodge Challenger Rear-End Collision Repair'
+    },
+    {
+      id: 11,
+      before: '/before11.jpg',
+      after: '/after11.jpg',
+      description: 'Sedan Side Impact and Paint Correction'
     }
   ];
 
