@@ -98,26 +98,18 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
   ];
 
   const recentWorkImages: string[] = [
-    'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3972511/pexels-photo-3972511.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/13243/pexels-photo-13243.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3972511/pexels-photo-3972511.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/13243/pexels-photo-13243.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3972511/pexels-photo-3972511.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/13243/pexels-photo-13243.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800'
+    '/paintjob2.jpg',
+    '/paintjob2-2.jpg',
+    '/paintjob1.jpg',
+    '/gallery1.jpg',
+    '/596837365_1337990891674368_7202820942233038023_n.jpg',
+    '/after1.jpg',
+    '/after5.jpg',
+    '/after6.jpg',
+    '/after9.jpg',
+    '/after10.jpg',
+    '/spoiler1.jpg',
+    '/spoiler2.jpg'
   ];
 
   const openLightbox = (image: string) => {
