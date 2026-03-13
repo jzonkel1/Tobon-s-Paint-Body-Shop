@@ -82,6 +82,12 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       before: '/before11.jpg',
       after: '/after11.jpg',
       description: 'Massive Rear Body Overhaul'
+    },
+    {
+      id: 12,
+      before: '/nospoiler1.jpg',
+      after: '/spoiler1.jpg',
+      description: 'Factory spoiler was put on this Nissan Z 🔥 we also went ahead and touched up some small scuff marks for the customer as well'
     }
   ];
 
@@ -143,7 +149,7 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
             {beforeAfterExamples.map((item) => (
               <div key={item.id} className="bg-white rounded-lg shadow-xl overflow-hidden">
                 <div className="p-6 text-center border-b border-gray-200">
-                  <h3 className="text-2xl font-bold text-gray-900">{item.description}</h3>
+                  <h3 className={`font-bold text-gray-900 ${item.description.length > 80 ? 'text-lg' : 'text-2xl'}`}>{item.description}</h3>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2">
                   <div className="relative">
