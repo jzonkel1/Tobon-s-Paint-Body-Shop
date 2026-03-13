@@ -1,228 +1,435 @@
-import { Phone, MapPin, Clock, Shield, Wrench, Sparkles } from 'lucide-react';
+import { Phone, MapPin, Clock, Shield, Wrench, Sparkles, Star, Award, Users, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
 }
 
 export default function Home({ onNavigate }: HomeProps) {
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
+
+  const featuredRepairs = [
+    {
+      before: '/before1.jpg',
+      after: '/after1.jpg',
+      title: 'Cadillac Escalade Side Impact Repair',
+    },
+    {
+      before: '/before6.jpg',
+      after: '/after6.jpg',
+      title: 'Major Key Mark Repair',
+    },
+    {
+      before: '/before5.jpg',
+      after: '/after5.jpg',
+      title: 'Dodge Charger Total Front Body Repair',
+    },
+    {
+      before: '/before10.jpg',
+      after: '/after10.jpg',
+      title: 'Dodge Challenger Rear-End Collision Repair',
+    },
+  ];
+
+  const services = [
+    {
+      title: 'Collision Repair',
+      description: 'Expert structural repair and restoration for accident damage',
+      image: 'https://images.pexels.com/photos/4489764/pexels-photo-4489764.jpeg?auto=compress&cs=tinysrgb&w=800',
+      icon: Shield,
+    },
+    {
+      title: 'Auto Painting',
+      description: 'Premium paint matching and finishing for a flawless look',
+      image: 'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
+      icon: Sparkles,
+    },
+    {
+      title: 'Dent Removal',
+      description: 'Precise dent repair to restore your vehicle\'s original condition',
+      image: 'https://images.pexels.com/photos/13243/pexels-photo-13243.jpeg?auto=compress&cs=tinysrgb&w=800',
+      icon: Wrench,
+    },
+    {
+      title: 'Detail & Restoration',
+      description: 'Complete detailing services for a showroom-quality finish',
+      image: 'https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800',
+      icon: Sparkles,
+    },
+  ];
+
+  const galleryPreview = [
+    '/after1.jpg',
+    '/after5.jpg',
+    '/after6.jpg',
+    '/after10.jpg',
+    '/after9.jpg',
+    '/after11.jpg',
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <section className="relative bg-gradient-to-br from-black via-gray-900 to-red-900 text-white py-20 lg:py-32">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48L2c+PC9zdmc+')] opacity-20"></div>
+    <div className="min-h-screen bg-white">
+      <section
+        className="relative h-[600px] lg:h-[700px] flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Expert Auto Body Repair<br />
+            <span className="text-red-500">Corpus Christi, Texas</span>
+          </h1>
+          <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+            Professional collision repair and paint services you can trust
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <a
+              href="tel:361-887-6606"
+              className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-lg text-lg font-bold flex items-center gap-3 transition-all transform hover:scale-105 shadow-2xl"
+            >
+              <Phone size={24} />
+              Call Now
+            </a>
+            <button
+              onClick={() => onNavigate('gallery')}
+              className="bg-white hover:bg-gray-100 text-black px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl"
+            >
+              View Our Work
+            </button>
+          </div>
+          <p className="text-gray-300 text-sm font-medium">Serving Corpus Christi Since 1989</p>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Expert Auto Body Repair in{' '}
-              <span className="text-red-600">Corpus Christi</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Professional collision repair, auto painting, and detailing services since 1989
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="tel:361-887-6606"
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold flex items-center gap-2 transition-all transform hover:scale-105 shadow-xl"
-              >
-                <Phone size={24} />
-                Call 361-887-6606
-              </a>
-              <button
-                onClick={() => onNavigate('contact')}
-                className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-xl"
-              >
-                Get a Free Quote
-              </button>
+      </section>
+
+      <section className="py-8 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="flex flex-col items-center">
+              <Award className="text-red-500 mb-2" size={32} />
+              <p className="font-bold text-sm sm:text-base">Serving Corpus Christi Since 1989</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Shield className="text-red-500 mb-2" size={32} />
+              <p className="font-bold text-sm sm:text-base">Quality Collision Repair</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Sparkles className="text-red-500 mb-2" size={32} />
+              <p className="font-bold text-sm sm:text-base">Professional Auto Paint Work</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Users className="text-red-500 mb-2" size={32} />
+              <p className="font-bold text-sm sm:text-base">Trusted Local Body Shop</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex items-start gap-4 p-6 rounded-lg bg-gray-50 border-l-4 border-red-600">
-              <MapPin className="text-red-600 flex-shrink-0" size={32} />
-              <div>
-                <h3 className="font-bold text-lg mb-2">Visit Us</h3>
-                <p className="text-gray-700">
-                  1104 S Port Ave<br />
-                  Corpus Christi, TX 78405
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 p-6 rounded-lg bg-gray-50 border-l-4 border-red-600">
-              <Phone className="text-red-600 flex-shrink-0" size={32} />
-              <div>
-                <h3 className="font-bold text-lg mb-2">Call Us</h3>
-                <a href="tel:361-887-6606" className="text-gray-700 hover:text-red-600 text-lg">
-                  361-887-6606
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 p-6 rounded-lg bg-gray-50 border-l-4 border-red-600">
-              <Clock className="text-red-600 flex-shrink-0" size={32} />
-              <div>
-                <h3 className="font-bold text-lg mb-2">Hours</h3>
-                <p className="text-gray-700">
-                  Monday - Friday<br />
-                  8:00 AM - 5:30 PM
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-2xl">★</span>
-                ))}
-              </div>
-              <span className="text-2xl font-bold text-gray-900">4.5</span>
-            </div>
-            <p className="text-gray-600 mb-8">Based on 99+ Google reviews</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
               Our Services
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive auto body repair and detailing services for all makes and models
+              Complete auto body repair solutions for all makes and models
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Shield,
-                title: 'Collision Repair',
-                description: 'Expert collision repair to restore your vehicle to pre-accident condition',
-              },
-              {
-                icon: Sparkles,
-                title: 'Auto Painting',
-                description: 'Professional auto painting with high-quality finishes and color matching',
-              },
-              {
-                icon: Wrench,
-                title: 'Dent Removal',
-                description: 'Precision dent removal services to restore your vehicle\'s appearance',
-              },
-              {
-                icon: Sparkles,
-                title: 'Vehicle Detailing',
-                description: 'Complete interior and exterior detailing to make your car look brand new',
-              },
-              {
-                icon: Shield,
-                title: 'Headlight Restoration',
-                description: 'Restore clarity to foggy or yellowed headlights for improved visibility',
-              },
-              {
-                icon: Wrench,
-                title: 'Quality Workmanship',
-                description: '35+ years of experience delivering exceptional results for our customers',
-              },
-            ].map((service, index) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-red-600"
+                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                onMouseEnter={() => setHoveredService(index)}
+                onMouseLeave={() => setHoveredService(null)}
               >
-                <service.icon className="text-red-600 mb-4" size={40} />
-                <h3 className="text-xl font-bold mb-2 text-gray-900">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <div className="aspect-[4/5] relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <service.icon className="mb-3 text-red-500" size={36} />
+                    <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+                    <p className="text-gray-300 text-sm">{service.description}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
           <div className="text-center mt-12">
             <button
               onClick={() => onNavigate('services')}
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors"
+              className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold transition-all inline-flex items-center gap-2"
             >
               View All Services
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-black text-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                Trusted Auto Body Shop Since <span className="text-red-600">1989</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+              See the Quality of Our Work
+            </h2>
+            <p className="text-xl text-gray-600">
+              Real repairs, real results
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {featuredRepairs.map((repair, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow">
+                <div className="grid grid-cols-2">
+                  <div className="relative">
+                    <div className="absolute top-3 left-3 bg-red-600 text-white px-3 py-1 rounded-md text-xs font-bold z-10">
+                      BEFORE
+                    </div>
+                    <img
+                      src={repair.before}
+                      alt="Before repair"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                  <div className="relative">
+                    <div className="absolute top-3 left-3 bg-green-600 text-white px-3 py-1 rounded-md text-xs font-bold z-10">
+                      AFTER
+                    </div>
+                    <img
+                      src={repair.after}
+                      alt="After repair"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="font-bold text-gray-900">{repair.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <button
+              onClick={() => onNavigate('gallery')}
+              className="bg-gray-900 hover:bg-black text-white px-10 py-4 rounded-lg font-bold transition-all inline-flex items-center gap-2"
+            >
+              View Full Gallery
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Experienced Auto Body & Paint Repair You Can Trust
               </h2>
-              <p className="text-gray-300 text-lg mb-6">
-                For over 35 years, Tobon's Paint & Body Shop has been the trusted choice for auto body repair in Corpus Christi. Our experienced technicians use state-of-the-art equipment and quality materials to deliver exceptional results.
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                For over 35 years, Tobon's Paint & Body Shop has been Corpus Christi's premier choice for collision repair and auto painting. Our master technicians combine decades of experience with modern equipment to deliver exceptional results on every vehicle.
               </p>
-              <p className="text-gray-300 text-lg mb-8">
-                We take pride in our workmanship and are committed to customer satisfaction on every job, big or small.
+              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                We understand your vehicle is important to you. That's why we treat every repair with meticulous attention to detail and pride ourselves on delivering workmanship that exceeds expectations.
               </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="bg-red-100 p-2 rounded-lg">
+                    <Shield className="text-red-600" size={24} />
+                  </div>
+                  <span className="text-gray-900 font-medium">35+ Years of Expert Service</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-red-100 p-2 rounded-lg">
+                    <Award className="text-red-600" size={24} />
+                  </div>
+                  <span className="text-gray-900 font-medium">Certified Technicians</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="bg-red-100 p-2 rounded-lg">
+                    <Star className="text-red-600" size={24} />
+                  </div>
+                  <span className="text-gray-900 font-medium">Customer Satisfaction Guarantee</span>
+                </div>
+              </div>
               <button
                 onClick={() => onNavigate('about')}
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-bold transition-colors"
+                className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold transition-all inline-flex items-center gap-2"
               >
                 Learn More About Us
+                <ChevronRight size={20} />
               </button>
             </div>
-            <div className="bg-gradient-to-br from-red-600 to-red-800 p-8 rounded-lg">
-              <h3 className="text-2xl font-bold mb-6">Why Choose Us?</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 text-2xl">✓</span>
-                  <span>35+ years of experience in auto body repair</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 text-2xl">✓</span>
-                  <span>Expert technicians with advanced training</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 text-2xl">✓</span>
-                  <span>Quality materials and state-of-the-art equipment</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 text-2xl">✓</span>
-                  <span>Competitive pricing and free estimates</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 text-2xl">✓</span>
-                  <span>Insurance claims assistance</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-red-400 text-2xl">✓</span>
-                  <span>Customer satisfaction guarantee</span>
-                </li>
-              </ul>
+            <div className="order-1 lg:order-2">
+              <img
+                src="https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Auto body repair shop"
+                className="rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Ready to Restore Your Vehicle?
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-6">
+            <p className="text-red-600 font-bold text-sm uppercase tracking-wider mb-2">Over 99+ Five Star Reviews</p>
+            <div className="flex items-center justify-center gap-2 mb-12">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="text-yellow-400 fill-yellow-400" size={32} />
+                ))}
+              </div>
+              <span className="text-3xl font-bold text-gray-900">4.5</span>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: 'Sarah Martinez',
+                text: 'Excellent work on my car after a collision. They made it look brand new again. Highly recommend!',
+                rating: 5,
+              },
+              {
+                name: 'David Rodriguez',
+                text: 'Professional service and great communication throughout the repair process. Very satisfied with the results.',
+                rating: 5,
+              },
+              {
+                name: 'Jennifer Lopez',
+                text: 'Best body shop in Corpus Christi! They fixed my truck perfectly and the price was fair.',
+                rating: 5,
+              },
+            ].map((review, index) => (
+              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="text-yellow-400 fill-yellow-400" size={20} />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed">"{review.text}"</p>
+                <p className="font-bold text-gray-900">{review.name}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <button
+              onClick={() => onNavigate('reviews')}
+              className="bg-gray-900 hover:bg-black text-white px-10 py-4 rounded-lg font-bold transition-all inline-flex items-center gap-2"
+            >
+              Read More Reviews
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+              Recent Projects
+            </h2>
+            <p className="text-xl text-gray-600">
+              A glimpse of our latest repair work
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {galleryPreview.map((image, index) => (
+              <div
+                key={index}
+                className="aspect-square overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
+                onClick={() => onNavigate('gallery')}
+              >
+                <img
+                  src={image}
+                  alt={`Recent project ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <button
+              onClick={() => onNavigate('gallery')}
+              className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold transition-all inline-flex items-center gap-2"
+            >
+              View Complete Gallery
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="relative py-24 bg-cover bg-center"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://images.pexels.com/photos/3972511/pexels-photo-3972511.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            Need Collision Repair or Paint Work?
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Contact us today for a free estimate on your auto body repair needs
+          <p className="text-xl sm:text-2xl mb-10 text-gray-200">
+            Get your free estimate today
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <a
               href="tel:361-887-6606"
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-bold inline-flex items-center justify-center gap-2 transition-colors"
+              className="bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-lg text-xl font-bold inline-flex items-center gap-3 transition-all transform hover:scale-105 shadow-2xl"
             >
-              <Phone size={24} />
-              Call 361-887-6606
+              <Phone size={28} />
+              361-887-6606
             </a>
             <button
               onClick={() => onNavigate('contact')}
-              className="bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-lg text-lg font-bold transition-colors"
+              className="bg-white hover:bg-gray-100 text-black px-10 py-5 rounded-lg text-xl font-bold transition-all transform hover:scale-105 shadow-2xl"
             >
               Contact Us
             </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="flex items-start gap-4">
+              <MapPin className="text-red-500 flex-shrink-0 mt-1" size={28} />
+              <div>
+                <h3 className="font-bold text-lg mb-2">Visit Us</h3>
+                <p className="text-gray-300">
+                  1104 S Port Ave<br />
+                  Corpus Christi, TX 78405
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <Phone className="text-red-500 flex-shrink-0 mt-1" size={28} />
+              <div>
+                <h3 className="font-bold text-lg mb-2">Call Us</h3>
+                <a href="tel:361-887-6606" className="text-gray-300 hover:text-red-500 text-lg transition-colors">
+                  361-887-6606
+                </a>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <Clock className="text-red-500 flex-shrink-0 mt-1" size={28} />
+              <div>
+                <h3 className="font-bold text-lg mb-2">Hours</h3>
+                <p className="text-gray-300">
+                  Monday - Friday<br />
+                  8:00 AM - 5:30 PM
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
