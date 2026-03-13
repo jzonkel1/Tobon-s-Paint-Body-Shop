@@ -129,19 +129,19 @@ export default function Contact() {
                     href="https://www.yelp.com/biz/tobons-paint-and-body-shop-corpus-christi"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white hover:bg-gray-100 p-3 rounded-full transition-colors shadow-lg flex items-center justify-center"
+                    className="bg-white hover:bg-gray-100 w-12 h-12 rounded-full transition-colors shadow-lg flex items-center justify-center"
                     aria-label="Visit our Yelp page"
                   >
-                    <img src="/19b872cc66b8bfc0fb8d947e8728f183.svg" alt="Yelp" className="w-8 h-8" />
+                    <img src="/19b872cc66b8bfc0fb8d947e8728f183.svg" alt="Yelp" className="w-5 h-5" />
                   </a>
                   <a
                     href="https://autorepairscore.com/tx/corpus-christi/tobons-paint-body-shop-corpus-christi-texas"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white hover:bg-gray-100 p-3 rounded-full transition-colors shadow-lg flex items-center justify-center"
+                    className="bg-white hover:bg-gray-100 w-12 h-12 rounded-full transition-colors shadow-lg flex items-center justify-center"
                     aria-label="Visit our AutoRepairScore page"
                   >
-                    <img src="/447210309_399267936448192_2073111667863481145_n.jpg" alt="AutoRepairScore" className="w-8 h-8" />
+                    <img src="/447210309_399267936448192_2073111667863481145_n.jpg" alt="AutoRepairScore" className="w-5 h-5" />
                   </a>
                 </div>
               </div>
