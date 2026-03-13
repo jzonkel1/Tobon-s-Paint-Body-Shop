@@ -72,7 +72,7 @@ export default function Home({ onNavigate }: HomeProps) {
       <section
         className="relative h-[600px] lg:h-[700px] flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/13741311/pexels-photo-13741311.jpeg?auto=compress&cs=tinysrgb&w=1600)',
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
