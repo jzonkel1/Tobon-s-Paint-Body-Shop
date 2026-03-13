@@ -45,13 +45,13 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       id: 5,
       before: '/before4.jpg',
       after: '/after4.jpg',
-      description: 'Huge truck dent repair'
+      description: 'Huge Truck Dent Repair'
     },
     {
       id: 6,
       before: '/before5.jpg',
       after: '/after5.jpg',
-      description: 'Dodge Charger total front body repair'
+      description: 'Dodge Charger Total Front Body Repair'
     },
     {
       id: 7,
@@ -63,7 +63,7 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       id: 8,
       before: '/before7.jpg',
       after: '/after7.jpg',
-      description: 'Total front bumper replacement'
+      description: 'Total Front Bumper Replacement'
     },
     {
       id: 9,
