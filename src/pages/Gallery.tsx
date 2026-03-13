@@ -33,25 +33,25 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       id: 3,
       before: '/before3.jpg',
       after: '/after3.jpg',
-      description: 'SUV Side Door and Fender Restoration'
+      description: 'Toyota Crown Dent Repair'
     },
     {
       id: 4,
       before: '/before4.jpg',
       after: '/after4.jpg',
-      description: 'Truck Bed and Tailgate Collision Repair'
+      description: 'Huge truck dent repair'
     },
     {
       id: 5,
       before: '/before5.jpg',
       after: '/after5.jpg',
-      description: 'Compact SUV Rear Quarter Panel Repair'
+      description: 'Dodge Charger total front body repair'
     },
     {
       id: 6,
       before: '/before6.jpg',
       after: '/after6.jpg',
-      description: 'TRX Front Bumper Repair'
+      description: 'Major Key Mark Repair'
     },
     {
       id: 7,
