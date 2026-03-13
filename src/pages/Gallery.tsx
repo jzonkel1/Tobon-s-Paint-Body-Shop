@@ -25,51 +25,51 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
     },
     {
       id: 2,
+      before: '/before9.jpg',
+      after: '/after9.jpg',
+      description: 'Major Front Body Repair'
+    },
+    {
+      id: 3,
       before: '/before2.jpg',
       after: '/after2.jpg',
       description: 'TRX Front Bumper Repair'
     },
     {
-      id: 3,
+      id: 4,
       before: '/before3.jpg',
       after: '/after3.jpg',
       description: 'Toyota Crown Dent Repair'
     },
     {
-      id: 4,
+      id: 5,
       before: '/before4.jpg',
       after: '/after4.jpg',
       description: 'Huge truck dent repair'
     },
     {
-      id: 5,
+      id: 6,
       before: '/before5.jpg',
       after: '/after5.jpg',
       description: 'Dodge Charger total front body repair'
     },
     {
-      id: 6,
+      id: 7,
       before: '/before6.jpg',
       after: '/after6.jpg',
       description: 'Major Key Mark Repair'
     },
     {
-      id: 7,
+      id: 8,
       before: '/before7.jpg',
       after: '/after7.jpg',
-      description: 'Complete Body Restoration'
-    },
-    {
-      id: 8,
-      before: '/before8.jpg',
-      after: '/after8.jpg',
-      description: 'White Sedan Door and Quarter Panel Repair'
+      description: 'Total front bumper replacement'
     },
     {
       id: 9,
-      before: '/before9.jpg',
-      after: '/after9.jpg',
-      description: 'SUV Side Collision Repair'
+      before: '/before8.jpg',
+      after: '/after8.jpg',
+      description: 'Door Panel Dent Repair'
     },
     {
       id: 10,
@@ -81,7 +81,7 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       id: 11,
       before: '/before11.jpg',
       after: '/after11.jpg',
-      description: 'Sedan Side Impact and Paint Correction'
+      description: 'Massive Rear Body Overhaul'
     }
   ];
 
