@@ -35,7 +35,7 @@ export default function Home({ onNavigate }: HomeProps) {
     {
       title: 'Collision Repair',
       description: 'Expert structural repair and restoration for accident damage',
-      image: 'https://images.pexels.com/photos/5846252/pexels-photo-5846252.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/1004409/pexels-photo-1004409.jpeg?auto=compress&cs=tinysrgb&w=800',
       icon: Shield,
     },
     {
@@ -47,7 +47,7 @@ export default function Home({ onNavigate }: HomeProps) {
     {
       title: 'Dent Removal',
       description: 'Precise dent repair to restore your vehicle\'s original condition',
-      image: 'https://images.pexels.com/photos/5214413/pexels-photo-5214413.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/13861/IMG_3496bfree.jpg?auto=compress&cs=tinysrgb&w=800',
       icon: Wrench,
     },
     {
@@ -370,7 +370,7 @@ export default function Home({ onNavigate }: HomeProps) {
       <section
         className="relative py-24 bg-cover bg-center"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://images.pexels.com/photos/3972511/pexels-photo-3972511.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&w=1600)',
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">
