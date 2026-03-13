@@ -35,7 +35,7 @@ export default function Home({ onNavigate }: HomeProps) {
     {
       title: 'Collision Repair',
       description: 'Expert structural repair and restoration for accident damage',
-      image: 'https://images.pexels.com/photos/1004409/pexels-photo-1004409.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/collisionrepair.png',
       icon: Shield,
     },
     {
@@ -47,7 +47,7 @@ export default function Home({ onNavigate }: HomeProps) {
     {
       title: 'Dent Removal',
       description: 'Precise dent repair to restore your vehicle\'s original condition',
-      image: 'https://images.pexels.com/photos/13861/IMG_3496bfree.jpg?auto=compress&cs=tinysrgb&w=800',
+      image: '/dentremoval.jpg',
       icon: Wrench,
     },
     {
