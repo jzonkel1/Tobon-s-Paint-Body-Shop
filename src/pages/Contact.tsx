@@ -113,14 +113,14 @@ export default function Contact() {
                 </ul>
               </div>
 
-              <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Connect With Us</h3>
+              <div className="mt-8 bg-white p-4 rounded-lg shadow-md">
+                <h3 className="text-lg font-bold text-gray-900 mb-3">Connect With Us</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://www.facebook.com/TobonsPaintAndBodyShop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#1877F2] hover:bg-[#0c5dcd] p-3 rounded-full transition-colors shadow-lg"
+                    className="bg-[#1877F2] hover:bg-[#0c5dcd] p-3 rounded-full transition-colors shadow-lg flex items-center justify-center"
                     aria-label="Visit our Facebook page"
                   >
                     <Facebook size={24} className="text-white" />
