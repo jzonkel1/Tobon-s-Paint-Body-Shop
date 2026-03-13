@@ -35,19 +35,19 @@ export default function Home({ onNavigate }: HomeProps) {
     {
       title: 'Collision Repair',
       description: 'Expert structural repair and restoration for accident damage',
-      image: 'https://images.pexels.com/photos/4489764/pexels-photo-4489764.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/5846252/pexels-photo-5846252.jpeg?auto=compress&cs=tinysrgb&w=800',
       icon: Shield,
     },
     {
       title: 'Auto Painting',
       description: 'Premium paint matching and finishing for a flawless look',
-      image: 'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800',
       icon: Sparkles,
     },
     {
       title: 'Dent Removal',
       description: 'Precise dent repair to restore your vehicle\'s original condition',
-      image: 'https://images.pexels.com/photos/13243/pexels-photo-13243.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/5214413/pexels-photo-5214413.jpeg?auto=compress&cs=tinysrgb&w=800',
       icon: Wrench,
     },
     {
