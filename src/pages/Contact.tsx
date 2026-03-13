@@ -120,7 +120,7 @@ export default function Contact() {
                     href="https://www.facebook.com/TobonsPaintAndBodyShop"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#1877F2] hover:bg-[#0c5dcd] p-3 rounded-full transition-colors shadow-lg flex items-center justify-center"
+                    className="bg-[#1877F2] hover:bg-[#0c5dcd] w-12 h-12 rounded-full transition-colors shadow-lg flex items-center justify-center"
                     aria-label="Visit our Facebook page"
                   >
                     <Facebook size={20} className="text-white" />
