@@ -27,7 +27,7 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       id: 2,
       before: '/before2.jpg',
       after: '/after2.jpg',
-      description: 'Sedan Front Quarter Panel Repair'
+      description: 'TRX Front Bumper Repair'
     },
     {
       id: 3,
