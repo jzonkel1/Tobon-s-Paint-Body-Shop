@@ -19,9 +19,15 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
   const beforeAfterExamples: BeforeAfterItem[] = [
     {
       id: 1,
-      before: '/camry.PNG',
-      after: '/camry.PNG',
-      description: 'Toyota Camry Collision Repair'
+      before: '/before1.jpg',
+      after: '/after1.jpg',
+      description: 'Cadillac Escalade Side Impact Repair'
+    },
+    {
+      id: 10,
+      before: '/before10.jpg',
+      after: '/after10.jpg',
+      description: 'Dodge Challenger Rear-End Collision Repair'
     }
   ];
 
@@ -85,13 +91,29 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
                 <div className="p-6 text-center border-b border-gray-200">
                   <h3 className="text-2xl font-bold text-gray-900">{item.description}</h3>
                 </div>
-                <div className="p-4">
-                  <img
-                    src={item.before}
-                    alt={item.description}
-                    className="w-full h-auto cursor-pointer hover:opacity-95 transition-opacity rounded-lg"
-                    onClick={() => openLightbox(item.before)}
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  <div className="relative">
+                    <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-bold z-10 shadow-lg">
+                      BEFORE
+                    </div>
+                    <img
+                      src={item.before}
+                      alt={`Before - ${item.description}`}
+                      className="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
+                      onClick={() => openLightbox(item.before)}
+                    />
+                  </div>
+                  <div className="relative">
+                    <div className="absolute top-4 left-4 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-bold z-10 shadow-lg">
+                      AFTER
+                    </div>
+                    <img
+                      src={item.after}
+                      alt={`After - ${item.description}`}
+                      className="w-full h-full object-cover cursor-pointer hover:opacity-95 transition-opacity"
+                      onClick={() => openLightbox(item.after)}
+                    />
+                  </div>
                 </div>
               </div>
             ))}
