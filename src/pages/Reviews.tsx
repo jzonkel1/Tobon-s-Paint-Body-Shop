@@ -46,6 +46,14 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
       rating: 5,
       text: 'Very friendly staff and quality body work. Highly recommend.',
     },
+    {
+      rating: 5,
+      text: 'They matched the paint perfectly and the repair was finished when promised.',
+    },
+    {
+      rating: 5,
+      text: 'Great local body shop. Friendly staff and the work on my vehicle came out excellent.',
+    },
   ];
 
   const StarRating = ({ rating }: { rating: number }) => (
