@@ -175,24 +175,19 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://www.yelp.com/biz/tobons-paint-and-body-shop-corpus-christi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#D32323] hover:bg-[#a31919] p-3 rounded-full transition-colors shadow-lg"
+                className="bg-white hover:bg-gray-100 p-3 rounded-full transition-colors shadow-lg flex items-center justify-center"
                 aria-label="Visit our Yelp page"
               >
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.16 12.594l-4.995 1.433c-.96.276-1.74-.8-1.176-1.63l2.905-4.308a1.072 1.072 0 0 1 1.596-.206 9.194 9.194 0 0 1 2.364 3.252 1.073 1.073 0 0 1-.686 1.459zm-5.025 3.152l4.942 1.606a1.072 1.072 0 0 1 .636 1.48 9.316 9.316 0 0 1-2.47 3.169 1.073 1.073 0 0 1-1.592-.26l-2.76-4.409c-.528-.847.288-1.894 1.236-1.584zm-4.796-2.818L5.168 2.381A1.073 1.073 0 0 1 5.8.708 9.395 9.395 0 0 1 8.932.034a9.344 9.344 0 0 1 3.665.555 1.073 1.073 0 0 1 .55 1.685L10.348 12.92a1.006 1.006 0 0 1-1.79.017zm-3.301-2.148l1.428-4.996c.276-.96 1.652-.69 2.08.408l2.204 5.598c.38.965-.563 1.93-1.452 1.47L5.644 11.09a1.073 1.073 0 0 1-.595-1.31zm-.055 6.968a9.372 9.372 0 0 1-2.014-3.44 1.073 1.073 0 0 1 .665-1.456l5.026-1.496c.96-.285 1.74.795 1.179 1.626L9.114 17.293a1.072 1.072 0 0 1-1.596.232z"/>
-                </svg>
+                <img src="/19b872cc66b8bfc0fb8d947e8728f183.svg" alt="Yelp" className="w-8 h-8" />
               </a>
               <a
                 href="https://autorepairscore.com/tx/corpus-christi/tobons-paint-body-shop-corpus-christi-texas"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 px-4 py-3 rounded-full transition-colors shadow-lg flex items-center gap-2"
+                className="bg-white hover:bg-gray-100 p-3 rounded-full transition-colors shadow-lg flex items-center justify-center"
                 aria-label="Visit our AutoRepairScore page"
               >
-                <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                </svg>
-                <span className="text-white font-bold text-sm">ARS</span>
+                <img src="/447210309_399267936448192_2073111667863481145_n.jpg" alt="AutoRepairScore" className="w-8 h-8" />
               </a>
             </div>
             <p className="text-gray-400 text-sm">
