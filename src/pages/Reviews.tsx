@@ -7,76 +7,44 @@ interface ReviewsProps {
 export default function Reviews({ onNavigate }: ReviewsProps) {
   const reviews = [
     {
-      name: 'Maria Rodriguez',
       rating: 5,
-      date: 'March 2024',
-      text: 'Outstanding service! My car looks brand new after the collision repair. The team was professional, kept me updated throughout the process, and the quality of work exceeded my expectations. Highly recommend!',
+      text: 'The paint job they did on my Dodge Mega Cab made it look like it just came off the showroom floor. They went above and beyond expectations.',
     },
     {
-      name: 'James Mitchell',
       rating: 5,
-      date: 'February 2024',
-      text: 'Been bringing my vehicles here for years. Always reliable, fair pricing, and excellent results. The paint job on my truck was flawless. These guys really know what they\'re doing.',
+      text: 'Great work done and they stuck to the price and deadline given.',
     },
     {
-      name: 'Sandra Lopez',
       rating: 5,
-      date: 'January 2024',
-      text: 'Amazing work on my dent removal! They were able to fix everything without needing to repaint. Fast, affordable, and the results are perfect. Will definitely be back for any future needs.',
+      text: 'They even restored my headlights as a courtesy. Really appreciate the extra effort.',
     },
     {
-      name: 'Robert Turner',
       rating: 5,
-      date: 'December 2023',
-      text: 'After my accident, I was worried about finding a trustworthy shop. Tobon\'s made the entire process stress-free. They worked directly with my insurance and kept me informed every step of the way.',
+      text: 'Family business with professional work. Totally recommended.',
     },
     {
-      name: 'Linda Garcia',
       rating: 5,
-      date: 'November 2023',
-      text: 'The detailing service brought my 10-year-old car back to life! Inside and out, it looks incredible. Worth every penny. The staff is friendly and truly cares about their customers.',
+      text: 'Richard was very quick and helpful when I stopped by for an estimate.',
     },
     {
-      name: 'Michael Chen',
       rating: 5,
-      date: 'October 2023',
-      text: 'Excellent collision repair work. They matched the paint perfectly and you can\'t even tell where the damage was. Professional team and fair prices. This is the only body shop I\'ll use.',
+      text: 'Excellent paint job and great customer service.',
     },
     {
-      name: 'Patricia Hernandez',
       rating: 5,
-      date: 'September 2023',
-      text: 'Had my headlights restored and the difference is night and day! So much brighter and clearer now. Quick service and very reasonable price. Great experience from start to finish.',
+      text: 'They repaired my vehicle quickly and the results looked fantastic.',
     },
     {
-      name: 'David Thompson',
       rating: 5,
-      date: 'August 2023',
-      text: 'Top-notch auto body shop! They repaired hail damage on my car and it looks perfect. The attention to detail is impressive. I appreciate their honest communication and quality work.',
+      text: 'Honest work and fair pricing. I would definitely return for future repairs.',
     },
     {
-      name: 'Carmen Reyes',
       rating: 5,
-      date: 'July 2023',
-      text: 'Best body shop in Corpus Christi! They\'ve been taking care of my family\'s vehicles for years. Always reliable, honest, and the work is always done right. Can\'t recommend them enough!',
+      text: 'My car looked brand new after the repair. Great craftsmanship.',
     },
     {
-      name: 'Steven Martinez',
       rating: 5,
-      date: 'June 2023',
-      text: 'Fantastic experience from quote to completion. They repaired my bumper perfectly and finished ahead of schedule. The staff is knowledgeable and friendly. Will definitely return for future needs.',
-    },
-    {
-      name: 'Angela White',
-      rating: 5,
-      date: 'May 2023',
-      text: 'Impressed with the quality and professionalism. They took great care of my vehicle and the custom paint job turned out even better than I imagined. True craftsmen!',
-    },
-    {
-      name: 'Carlos Gonzalez',
-      rating: 5,
-      date: 'April 2023',
-      text: 'Honest, reliable, and skilled technicians. They explained everything clearly and the repair work was flawless. Fair prices and excellent customer service. This is a trustworthy business!',
+      text: 'Very friendly staff and quality body work. Highly recommend.',
     },
   ];
 
@@ -101,9 +69,9 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
             </p>
             <div className="flex items-center justify-center gap-3 mb-4">
               <StarRating rating={5} />
-              <span className="text-2xl font-bold">5.0</span>
+              <span className="text-2xl font-bold">4.5</span>
             </div>
-            <p className="text-gray-300">Based on hundreds of customer reviews</p>
+            <p className="text-gray-300">Based on 99+ Google reviews</p>
           </div>
         </div>
       </section>
@@ -124,15 +92,10 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow border-t-4 border-red-600"
               >
-                <div className="flex items-center justify-between mb-4">
+                <div className="mb-4">
                   <StarRating rating={review.rating} />
-                  <span className="text-sm text-gray-500">{review.date}</span>
                 </div>
-                <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
-                <div className="border-t pt-4">
-                  <p className="font-bold text-gray-900">{review.name}</p>
-                  <p className="text-sm text-gray-500">Verified Customer</p>
-                </div>
+                <p className="text-gray-700 italic">"{review.text}"</p>
               </div>
             ))}
           </div>
@@ -158,8 +121,8 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
                 <p className="text-gray-300">Years of Excellence</p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg">
-                <div className="text-4xl font-bold text-red-600 mb-2">5-Star</div>
-                <p className="text-gray-300">Average Rating</p>
+                <div className="text-4xl font-bold text-red-600 mb-2">4.5-Star</div>
+                <p className="text-gray-300">Google Rating</p>
               </div>
             </div>
             <div className="space-y-4 text-lg text-gray-300 mb-8">
