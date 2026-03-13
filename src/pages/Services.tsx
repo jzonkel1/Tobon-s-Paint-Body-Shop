@@ -7,6 +7,7 @@ interface ServicesProps {
 export default function Services({ onNavigate }: ServicesProps) {
   const services = [
     {
+      id: 'collision-repair',
       icon: Car,
       title: 'Collision Repair',
       description: 'Comprehensive collision repair services to restore your vehicle to its pre-accident condition. Our skilled technicians handle everything from minor fender benders to major collision damage.',
@@ -19,6 +20,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       ],
     },
     {
+      id: 'auto-painting',
       icon: Paintbrush,
       title: 'Auto Painting',
       description: 'Professional auto painting services using premium paint and advanced techniques. We match your vehicle\'s original color perfectly and ensure a flawless, long-lasting finish.',
@@ -31,6 +33,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       ],
     },
     {
+      id: 'dent-removal',
       icon: Wrench,
       title: 'Dent Removal',
       description: 'Expert dent removal services that restore your vehicle\'s smooth appearance without compromising the original paint. We handle dents of all sizes.',
@@ -43,6 +46,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       ],
     },
     {
+      id: 'vehicle-detailing',
       icon: Sparkles,
       title: 'Vehicle Detailing',
       description: 'Complete interior and exterior detailing services to make your vehicle look and feel like new. We pay attention to every detail for exceptional results.',
@@ -55,6 +59,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       ],
     },
     {
+      id: 'headlight-restoration',
       icon: Lightbulb,
       title: 'Headlight Restoration',
       description: 'Restore clarity and brightness to foggy, yellowed, or oxidized headlights. Improve visibility and enhance your vehicle\'s appearance.',
@@ -108,6 +113,7 @@ export default function Services({ onNavigate }: ServicesProps) {
             {services.map((service, index) => (
               <div
                 key={index}
+                id={service.id}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="md:flex">

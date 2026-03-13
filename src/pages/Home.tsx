@@ -426,7 +426,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 <h3 className="font-bold text-lg mb-2">Hours</h3>
                 <p className="text-gray-300">
                   Monday - Friday<br />
-                  8:00 AM - 5:30 PM
+                  8:00 AM - 6:00 PM
                 </p>
               </div>
             </div>
