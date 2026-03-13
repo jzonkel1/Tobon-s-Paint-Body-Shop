@@ -88,6 +88,12 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       before: '/nospoiler1.jpg',
       after: '/spoiler1.jpg',
       description: 'Nissan Z Factory Spoiler Installation with Paint Touch-Up'
+    },
+    {
+      id: 13,
+      before: '/nospoiler2.jpg',
+      after: '/spoiler2.jpg',
+      description: 'CT5 V Spoiler Painted Black'
     }
   ];
 

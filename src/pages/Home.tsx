@@ -10,14 +10,14 @@ export default function Home({ onNavigate }: HomeProps) {
 
   const featuredRepairs = [
     {
-      before: '/before1.jpg',
-      after: '/after1.jpg',
-      title: 'Cadillac Escalade Side Impact Repair',
+      before: '/before9.jpg',
+      after: '/after9.jpg',
+      title: 'Major Front Body Repair',
     },
     {
-      before: '/before6.jpg',
-      after: '/after6.jpg',
-      title: 'Major Key Mark Repair',
+      before: '/before11.jpg',
+      after: '/after11.jpg',
+      title: 'Massive Rear Body Overhaul',
     },
     {
       before: '/before5.jpg',
