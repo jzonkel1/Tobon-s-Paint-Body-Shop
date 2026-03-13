@@ -19,27 +19,9 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
   const beforeAfterExamples: BeforeAfterItem[] = [
     {
       id: 1,
-      before: 'https://images.pexels.com/photos/6873051/pexels-photo-6873051.jpeg?auto=compress&cs=tinysrgb&w=800',
-      after: 'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Front Bumper Collision Repair'
-    },
-    {
-      id: 2,
-      before: 'https://images.pexels.com/photos/5849567/pexels-photo-5849567.jpeg?auto=compress&cs=tinysrgb&w=800',
-      after: 'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Side Panel Dent Removal'
-    },
-    {
-      id: 3,
-      before: 'https://images.pexels.com/photos/6873051/pexels-photo-6873051.jpeg?auto=compress&cs=tinysrgb&w=800',
-      after: 'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Rear End Collision Repair'
-    },
-    {
-      id: 4,
-      before: 'https://images.pexels.com/photos/5849567/pexels-photo-5849567.jpeg?auto=compress&cs=tinysrgb&w=800',
-      after: 'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800',
-      description: 'Complete Paint Restoration'
+      before: '/camry.PNG',
+      after: '/camry.PNG',
+      description: 'Toyota Camry Collision Repair'
     }
   ];
 
@@ -97,35 +79,19 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
           <h2 className="text-4xl font-bold text-gray-900 text-center mb-12">
             Before & After Repairs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-12">
             {beforeAfterExamples.map((item) => (
-              <div key={item.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="grid grid-cols-2">
-                  <div className="relative">
-                    <img
-                      src={item.before}
-                      alt={`Before ${item.description}`}
-                      className="w-full h-64 object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                      onClick={() => openLightbox(item.before)}
-                    />
-                    <div className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Before
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <img
-                      src={item.after}
-                      alt={`After ${item.description}`}
-                      className="w-full h-64 object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                      onClick={() => openLightbox(item.after)}
-                    />
-                    <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      After
-                    </div>
-                  </div>
+              <div key={item.id} className="bg-white rounded-lg shadow-xl overflow-hidden">
+                <div className="p-6 text-center border-b border-gray-200">
+                  <h3 className="text-2xl font-bold text-gray-900">{item.description}</h3>
                 </div>
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-semibold text-gray-900">{item.description}</h3>
+                <div className="p-4">
+                  <img
+                    src={item.before}
+                    alt={item.description}
+                    className="w-full h-auto cursor-pointer hover:opacity-95 transition-opacity rounded-lg"
+                    onClick={() => openLightbox(item.before)}
+                  />
                 </div>
               </div>
             ))}
