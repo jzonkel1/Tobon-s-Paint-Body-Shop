@@ -24,6 +24,18 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       description: 'Cadillac Escalade Side Impact Repair'
     },
     {
+      id: 6,
+      before: '/before6.jpg',
+      after: '/after6.jpg',
+      description: 'Front-End Collision Repair'
+    },
+    {
+      id: 7,
+      before: '/before7.jpg',
+      after: '/after7.jpg',
+      description: 'Complete Body Restoration'
+    },
+    {
       id: 10,
       before: '/before10.jpg',
       after: '/after10.jpg',
