@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
+import Gallery from './pages/Gallery';
 import Reviews from './pages/Reviews';
 import Contact from './pages/Contact';
 
@@ -23,6 +24,8 @@ function App() {
         return <Services onNavigate={handleNavigate} />;
       case 'about':
         return <About onNavigate={handleNavigate} />;
+      case 'gallery':
+        return <Gallery onNavigate={handleNavigate} />;
       case 'reviews':
         return <Reviews onNavigate={handleNavigate} />;
       case 'contact':
