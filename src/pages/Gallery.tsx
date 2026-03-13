@@ -87,7 +87,7 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       id: 12,
       before: '/nospoiler1.jpg',
       after: '/spoiler1.jpg',
-      description: 'Factory spoiler was put on this Nissan Z 🔥 we also went ahead and touched up some small scuff marks for the customer as well'
+      description: 'Nissan Z Factory Spoiler Installation with Paint Touch-Up'
     }
   ];
 
