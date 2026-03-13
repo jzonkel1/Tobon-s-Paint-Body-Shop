@@ -51,7 +51,7 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       id: 6,
       before: '/before6.jpg',
       after: '/after6.jpg',
-      description: 'Front-End Collision Repair'
+      description: 'TRX Front Bumper Repair'
     },
     {
       id: 7,
