@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import ContactFormSection from './components/ContactFormSection';
+import EstimatePopup from './components/EstimatePopup';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
@@ -39,7 +41,9 @@ function App() {
     <div className="min-h-screen flex flex-col">
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
       <main className="flex-grow">{renderPage()}</main>
+      <ContactFormSection />
       <Footer onNavigate={handleNavigate} />
+      <EstimatePopup />
     </div>
   );
 }

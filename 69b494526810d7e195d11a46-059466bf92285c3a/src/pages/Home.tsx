@@ -92,8 +92,14 @@ export default function Home({ onNavigate }: HomeProps) {
               Call Now
             </a>
             <button
-              onClick={() => onNavigate('gallery')}
+              onClick={() => document.getElementById('estimate-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white hover:bg-gray-100 text-black px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl"
+            >
+              Request Free Estimate
+            </button>
+            <button
+              onClick={() => onNavigate('gallery')}
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl"
             >
               View Our Work
             </button>
@@ -389,10 +395,10 @@ export default function Home({ onNavigate }: HomeProps) {
               361-887-6606
             </a>
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => document.getElementById('estimate-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white hover:bg-gray-100 text-black px-10 py-5 rounded-lg text-xl font-bold transition-all transform hover:scale-105 shadow-2xl"
             >
-              Contact Us
+              Request Free Estimate
             </button>
           </div>
         </div>

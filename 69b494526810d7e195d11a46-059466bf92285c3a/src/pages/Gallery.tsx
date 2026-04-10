@@ -199,15 +199,23 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
           </div>
         </section>
 
-        <section className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl shadow-xl p-12 text-center text-white">
+        <section className="bg-gradient-to-r from-black to-gray-900 rounded-2xl shadow-xl p-12 text-center text-white border-t-4 border-red-600">
           <h2 className="text-3xl font-bold mb-4">Need Collision Repair?</h2>
-          <p className="text-xl mb-6">Get professional auto body repair service today</p>
-          <a
-            href="tel:3618876606"
-            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-          >
-            Call Now: (361) 887-6606
-          </a>
+          <p className="text-xl mb-8 text-gray-300">Get professional auto body repair service today</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:3618876606"
+              className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg"
+            >
+              Call Now: (361) 887-6606
+            </a>
+            <button
+              onClick={() => document.getElementById('estimate-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="bg-white hover:bg-gray-100 text-black px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg"
+            >
+              Request Free Estimate
+            </button>
+          </div>
         </section>
       </div>
 

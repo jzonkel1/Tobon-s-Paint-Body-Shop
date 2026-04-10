@@ -162,10 +162,10 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
               Call 361-887-6606
             </a>
             <button
-              onClick={() => onNavigate('contact')}
+              onClick={() => document.getElementById('estimate-form')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-gray-900 hover:bg-black text-white px-8 py-4 rounded-lg text-lg font-bold transition-colors"
             >
-              Get Free Estimate
+              Request Free Estimate
             </button>
           </div>
         </div>

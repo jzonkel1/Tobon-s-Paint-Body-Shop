@@ -171,6 +171,16 @@ export default function Contact() {
                   <span className="font-semibold">Landmarks:</span> Near the intersection of S Port Ave and Lipan St, close to downtown Corpus Christi.
                 </p>
               </div>
+
+              <div className="flex flex-col items-center justify-center bg-black rounded-xl py-10 px-6 shadow-lg border-t-4 border-red-600">
+                <img
+                  src="/body_shop_car_repair.png"
+                  alt="Tobon's Paint & Body Shop"
+                  className="h-36 w-auto drop-shadow-xl mb-4"
+                />
+                <p className="text-white text-lg font-bold tracking-wide text-center">Tobon's Paint & Body Shop</p>
+                <p className="text-red-500 text-sm font-medium mt-1">Serving Corpus Christi Since 1989</p>
+              </div>
             </div>
           </div>
         </div>
