@@ -1,0 +1,9 @@
+[build]
+  base = "69b494526810d7e195d11a46-059466bf92285c3a"
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
