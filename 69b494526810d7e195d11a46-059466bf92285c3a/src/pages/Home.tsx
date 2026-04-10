@@ -77,11 +77,11 @@ export default function Home({ onNavigate }: HomeProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Expert Auto Body Repair<br />
+            Trusted Auto Body & Collision Repair<br />
             <span className="text-red-500">Corpus Christi, Texas</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
-            Professional collision repair and paint services you can trust
+            Serving the Coastal Bend since 1989 with professional collision and paint repair.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
             <a
