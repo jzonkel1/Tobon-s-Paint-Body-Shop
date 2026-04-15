@@ -70,36 +70,40 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div className="min-h-screen bg-white">
       <section
-        className="relative h-[600px] lg:h-[700px] flex items-center justify-center bg-cover bg-center"
+        className="relative min-h-[600px] lg:min-h-[700px] flex items-center justify-center bg-cover bg-center py-16 lg:py-20"
         style={{
           backgroundImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/13741311/pexels-photo-13741311.jpeg?auto=compress&cs=tinysrgb&w=1600)',
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-red-600 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-wider">
+            <Users size={16} />
+            Family Owned & Operated Since 1989
+          </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Trusted Auto Body & Collision Repair<br />
             <span className="text-red-500">Corpus Christi, Texas</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
-            Serving the Coastal Bend since 1989 with professional collision and paint repair.
+            Serving the Coastal Bend since 1989 — owner Richard Tobon personally works to find you the best parts deals and keep your repair costs down.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-6 w-full max-w-xl sm:max-w-none mx-auto">
             <a
               href="tel:361-887-6606"
-              className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-lg text-lg font-bold flex items-center gap-3 transition-all transform hover:scale-105 shadow-2xl"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 sm:px-10 py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-2xl"
             >
               <Phone size={24} />
               Call Now
             </a>
             <button
               onClick={() => document.getElementById('estimate-form')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white hover:bg-gray-100 text-black px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl"
+              className="bg-white hover:bg-gray-100 text-black px-8 sm:px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl"
             >
               Request Free Estimate
             </button>
             <button
               onClick={() => onNavigate('gallery')}
-              className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl"
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 sm:px-10 py-4 rounded-lg text-lg font-bold transition-all transform hover:scale-105 shadow-2xl"
             >
               View Our Work
             </button>
@@ -125,7 +129,7 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
             <div className="flex flex-col items-center">
               <Users className="text-red-500 mb-2" size={32} />
-              <p className="font-bold text-sm sm:text-base">Trusted Local Body Shop</p>
+              <p className="font-bold text-sm sm:text-base">Family Owned & Operated</p>
             </div>
           </div>
         </div>
@@ -234,11 +238,14 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 text-sm font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+                Family Owned & Operated
+              </div>
               <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Experienced Auto Body & Paint Repair You Can Trust
               </h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                For over 35 years, Tobon's Paint & Body Shop has been Corpus Christi's premier choice for collision repair and auto painting. Our master technicians combine decades of experience with modern equipment to deliver exceptional results on every vehicle.
+                For over 35 years, owner Richard Tobon has led Corpus Christi's most trusted collision repair shop. Richard is hands-on in every job — and he personally hunts down the best deals on parts so you're never overpaying for your repair.
               </p>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                 We understand your vehicle is important to you. That's why we treat every repair with meticulous attention to detail and pride ourselves on delivering workmanship that exceeds expectations.
@@ -254,7 +261,7 @@ export default function Home({ onNavigate }: HomeProps) {
                   <div className="bg-red-100 p-2 rounded-lg">
                     <Award className="text-red-600" size={24} />
                   </div>
-                  <span className="text-gray-900 font-medium">Certified Technicians</span>
+                  <span className="text-gray-900 font-medium">Richard Finds You the Best Parts Prices</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="bg-red-100 p-2 rounded-lg">

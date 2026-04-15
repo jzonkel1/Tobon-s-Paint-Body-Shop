@@ -19,9 +19,22 @@
     <meta name="geo.region" content="US-TX" />
     <meta name="geo.placename" content="Corpus Christi" />
     <meta name="geo.position" content="27.7811;-97.3967" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,900&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Hidden form for Netlify build-bot discovery (React SPA requires this) -->
+    <form name="estimate-request" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+      <input type="hidden" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input type="file" name="photos" />
+    </form>
   </body>
 </html>

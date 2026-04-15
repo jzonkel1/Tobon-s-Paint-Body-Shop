@@ -1,4 +1,4 @@
-import { Phone, Award, Users, Target, Heart } from 'lucide-react';
+import { Phone, Award, Users, Target, Heart, DollarSign } from 'lucide-react';
 
 interface AboutProps {
   onNavigate: (page: string) => void;
@@ -10,8 +10,12 @@ export default function About({ onNavigate }: AboutProps) {
       <section className="bg-gradient-to-r from-black to-gray-900 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-red-600 text-white text-sm font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-wider">
+              <Users size={16} />
+              Family Owned & Operated
+            </div>
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-              About <span className="text-red-600">Tobon's Paint & Body Shop</span>
+              About <span className="text-red-600 tobons-brand">Tobon's Paint & Body Shop</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Serving the Corpus Christi community with pride since 1989
@@ -27,18 +31,21 @@ export default function About({ onNavigate }: AboutProps) {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                 Our Story
               </h2>
+              <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 text-sm font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+                Family Owned & Operated
+              </div>
               <div className="space-y-4 text-gray-700 text-lg">
                 <p>
-                  Since opening our doors in <span className="font-bold text-red-600">1989</span>, Tobon's Paint & Body Shop has been dedicated to providing exceptional auto body repair services to the Corpus Christi community.
+                  Since opening our doors in <span className="font-bold text-red-600">1989</span>, <span className="tobons-brand">Tobon's Paint & Body Shop</span> has been a family-owned cornerstone of the Corpus Christi community. Owner <span className="font-bold text-gray-900">Richard Tobon</span> founded the shop and has been hands-on ever since — bringing his personal commitment to quality and fairness to every single repair.
                 </p>
                 <p>
-                  For over 35 years, we've built our reputation on quality workmanship, honest service, and customer satisfaction. What started as a small local shop has grown into one of the most trusted names in auto body repair in the region.
+                  Richard is known throughout the Coastal Bend for going the extra mile to save his customers money. He personally sources parts, shopping around to find the best prices so that customers never overpay. It's the kind of care you only get from a family business where the owner's name is on the building.
                 </p>
                 <p>
-                  Our team of experienced technicians combines traditional craftsmanship with modern technology to deliver outstanding results on every job. We treat every vehicle as if it were our own, ensuring attention to detail and quality that exceeds expectations.
+                  For over 35 years, we've built our reputation on quality workmanship, honest service, and customer satisfaction. Our team combines traditional craftsmanship with modern technology to deliver outstanding results on every job.
                 </p>
                 <p>
-                  Whether you need collision repair, custom painting, or vehicle detailing, we're here to help restore your vehicle to its best condition.
+                  Whether you need collision repair, custom painting, or vehicle detailing, we're here to help restore your vehicle to its best condition — at the fairest price possible.
                 </p>
               </div>
             </div>
@@ -77,7 +84,7 @@ export default function About({ onNavigate }: AboutProps) {
               The principles that guide everything we do
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
             {[
               {
                 icon: Award,
@@ -86,8 +93,13 @@ export default function About({ onNavigate }: AboutProps) {
               },
               {
                 icon: Users,
-                title: 'Expertise',
-                description: 'Our skilled technicians have decades of combined experience and stay current with industry advancements.',
+                title: 'Family Owned',
+                description: 'Owner Richard Tobon is personally involved in the shop every day — you\'re dealing with family, not a franchise.',
+              },
+              {
+                icon: DollarSign,
+                title: 'Saves You Money',
+                description: 'Richard shops around to find the best deals on parts so your repair costs stay as low as possible.',
               },
               {
                 icon: Target,
@@ -120,16 +132,16 @@ export default function About({ onNavigate }: AboutProps) {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
+                'Family owned & operated — Richard Tobon is here every day',
                 'Over 35 years of proven experience',
+                'Richard personally sources parts to get you the best price',
                 'Highly skilled and certified technicians',
                 'State-of-the-art equipment and techniques',
-                'Quality parts and premium materials',
+                'No markups on parts — we pass the savings to you',
                 'Free estimates and competitive pricing',
                 'Insurance claim assistance',
                 'Warranty on all work performed',
-                'Personalized customer service',
-                'Convenient location in Corpus Christi',
-                'Commitment to customer satisfaction',
+                'Personalized customer service — not a franchise, not a chain',
                 'Fast turnaround times',
                 'Attention to detail on every job',
               ].map((reason, index) => (

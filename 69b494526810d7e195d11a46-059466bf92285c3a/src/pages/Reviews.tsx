@@ -73,7 +73,7 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
               Customer <span className="text-red-600">Reviews</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              See what our satisfied customers have to say about their experience with Tobon's Paint & Body Shop
+              See what our satisfied customers have to say about their experience with <span className="tobons-brand">Tobon's Paint & Body Shop</span>
             </p>
             <div className="flex items-center justify-center gap-3 mb-4">
               <StarRating rating={5} />
@@ -94,7 +94,7 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
               Real reviews from real customers who trust us with their vehicles
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, index) => (
               <div
                 key={index}
@@ -135,7 +135,7 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
             </div>
             <div className="space-y-4 text-lg text-gray-300 mb-8">
               <p>
-                At Tobon's Paint & Body Shop, your satisfaction is our priority. We take pride in delivering exceptional results and building lasting relationships with our customers.
+                At <span className="tobons-brand">Tobon's Paint & Body Shop</span>, your satisfaction is our priority. We take pride in delivering exceptional results and building lasting relationships with our customers.
               </p>
               <p>
                 Every vehicle receives the same level of care and attention, and we won't consider the job complete until you're completely satisfied.

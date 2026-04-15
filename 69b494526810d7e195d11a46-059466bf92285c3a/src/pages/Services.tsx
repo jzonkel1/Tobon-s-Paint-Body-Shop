@@ -1,4 +1,4 @@
-import { Phone, Car, Paintbrush, Wrench, Sparkles, Lightbulb, Shield } from 'lucide-react';
+import { Phone, Car, Paintbrush, Wrench, Sparkles, Lightbulb, Shield, DollarSign, Users } from 'lucide-react';
 
 interface ServicesProps {
   onNavigate: (page: string) => void;
@@ -117,11 +117,12 @@ export default function Services({ onNavigate }: ServicesProps) {
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="md:flex">
-                  <div className="md:w-1/3 bg-gradient-to-br from-red-600 to-red-800 p-8 flex flex-col items-center justify-center text-white">
-                    <service.icon size={80} className="mb-4" />
-                    <h2 className="text-2xl font-bold text-center">{service.title}</h2>
+                  <div className="md:w-1/3 bg-gradient-to-br from-red-600 to-red-800 p-5 md:p-8 flex flex-row md:flex-col items-center justify-start md:justify-center gap-4 md:gap-0 text-white">
+                    <service.icon size={48} className="md:hidden flex-shrink-0" />
+                    <service.icon size={80} className="hidden md:block mb-4" />
+                    <h2 className="text-xl md:text-2xl font-bold md:text-center">{service.title}</h2>
                   </div>
-                  <div className="md:w-2/3 p-8">
+                  <div className="md:w-2/3 p-6 md:p-8">
                     <p className="text-gray-700 text-lg mb-6">{service.description}</p>
                     <h3 className="font-bold text-lg mb-4 text-gray-900">What We Offer:</h3>
                     <ul className="space-y-3">
@@ -136,6 +137,47 @@ export default function Services({ onNavigate }: ServicesProps) {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 bg-red-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/20 text-white text-sm font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+                <Users size={14} />
+                Family Owned & Operated
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                We Work Hard to Save You Money on Parts
+              </h2>
+              <p className="text-red-100 text-lg leading-relaxed">
+                Owner Richard Tobon personally shops around for the best deals on parts before every repair. At a big chain, you pay whatever their system quotes. Here, Richard hunts down the best prices so your bill stays as low as it can — without ever cutting corners on quality.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="bg-white/10 rounded-xl p-6 text-center">
+                <DollarSign size={40} className="mx-auto mb-3 text-white" />
+                <h3 className="font-bold text-lg mb-2">Best Parts Prices</h3>
+                <p className="text-red-100 text-sm">Richard sources parts from multiple suppliers to find the lowest cost</p>
+              </div>
+              <div className="bg-white/10 rounded-xl p-6 text-center">
+                <Shield size={40} className="mx-auto mb-3 text-white" />
+                <h3 className="font-bold text-lg mb-2">No Quality Compromises</h3>
+                <p className="text-red-100 text-sm">Savings on price, never on quality — every part meets our strict standards</p>
+              </div>
+              <div className="bg-white/10 rounded-xl p-6 text-center">
+                <Users size={40} className="mx-auto mb-3 text-white" />
+                <h3 className="font-bold text-lg mb-2">Owner-Involved</h3>
+                <p className="text-red-100 text-sm">A family shop where the owner's reputation is on the line every day</p>
+              </div>
+              <div className="bg-white/10 rounded-xl p-6 text-center">
+                <Phone size={40} className="mx-auto mb-3 text-white" />
+                <h3 className="font-bold text-lg mb-2">Transparent Pricing</h3>
+                <p className="text-red-100 text-sm">We explain every line of your estimate — no surprises, no hidden fees</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

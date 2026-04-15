@@ -41,8 +41,23 @@ function ContactForm({ compact = false, onClose }: ContactFormSectionProps) {
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const data = new FormData();
+    data.append('form-name', 'estimate-request');
+    data.append('name', form.name);
+    data.append('phone', form.phone);
+    data.append('email', form.email);
+    if (form.message) data.append('message', form.message);
+    form.photos.forEach(photo => data.append('photos', photo));
+
+    try {
+      await fetch('/', { method: 'POST', body: data });
+    } catch (err) {
+      console.error('Form submission error:', err);
+    }
+
     setSubmitted(true);
   };
 
@@ -68,7 +83,18 @@ function ContactForm({ compact = false, onClose }: ContactFormSectionProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      name="estimate-request"
+      onSubmit={handleSubmit}
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      encType="multipart/form-data"
+      className="space-y-4"
+    >
+      <input type="hidden" name="form-name" value="estimate-request" />
+      <p style={{ display: 'none' }}>
+        <label>Don't fill this in: <input name="bot-field" tabIndex={-1} autoComplete="off" /></label>
+      </p>
       <div className={`grid gap-4 ${compact ? 'grid-cols-1' : 'sm:grid-cols-2'}`}>
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">

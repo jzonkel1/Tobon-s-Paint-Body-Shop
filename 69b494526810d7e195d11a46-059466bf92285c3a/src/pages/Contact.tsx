@@ -153,12 +153,11 @@ export default function Contact() {
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3471.5!2d-97.3967!3d27.7811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866f9f5a5f5f5f5f%3A0x5f5f5f5f5f5f5f5f!2s1104%20S%20Port%20Ave%2C%20Corpus%20Christi%2C%20TX%2078405!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
-                  height="450"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-lg"
+                  className="rounded-lg w-full h-64 sm:h-80 lg:h-[450px]"
                   title="Tobon's Paint & Body Shop Location"
                 ></iframe>
               </div>
@@ -178,7 +177,7 @@ export default function Contact() {
                   alt="Tobon's Paint & Body Shop"
                   className="h-36 w-auto drop-shadow-xl mb-4"
                 />
-                <p className="text-white text-lg font-bold tracking-wide text-center">Tobon's Paint & Body Shop</p>
+                <p className="text-white text-lg font-bold tracking-wide text-center tobons-brand">Tobon's Paint & Body Shop</p>
                 <p className="text-red-500 text-sm font-medium mt-1">Serving Corpus Christi Since 1989</p>
               </div>
             </div>

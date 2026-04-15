@@ -38,7 +38,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               className="h-16 w-auto"
             />
             <div className="ml-3 hidden sm:block">
-              <h1 className="text-xl font-bold text-red-600">Tobon's Paint & Body Shop</h1>
+              <h1 className="text-xl font-bold text-red-600 tobons-brand">Tobon's Paint & Body Shop</h1>
               <p className="text-xs text-gray-300">Serving Corpus Christi Since 1989</p>
             </div>
           </div>

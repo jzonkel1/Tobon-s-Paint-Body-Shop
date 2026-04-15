@@ -17,9 +17,9 @@ export default function Footer({ onNavigate }: FooterProps) {
               alt="Tobon's Paint & Body Shop"
               className="h-20 w-auto mb-4"
             />
-            <h3 className="text-xl font-bold text-red-600 mb-2">Tobon's Paint & Body Shop</h3>
+            <h3 className="text-xl font-bold text-red-600 mb-2 tobons-brand">Tobon's Paint & Body Shop</h3>
             <p className="text-gray-400 text-sm">
-              Professional auto body repair services in Corpus Christi since 1989
+              Family owned & operated since 1989. Professional auto body repair in Corpus Christi.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               </a>
             </div>
             <p className="text-gray-400 text-sm">
-              &copy; {currentYear} Tobon's Paint & Body Shop. All rights reserved. | Serving Corpus Christi since 1989
+              &copy; {currentYear} <span className="tobons-brand">Tobon's Paint & Body Shop</span>. All rights reserved. | Family Owned & Operated | Serving Corpus Christi since 1989
             </p>
           </div>
         </div>
