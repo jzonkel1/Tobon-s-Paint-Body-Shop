@@ -85,7 +85,7 @@ export default function Home({ onNavigate }: HomeProps) {
             <span className="text-red-500">Corpus Christi, Texas</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
-            Serving the Coastal Bend since 1989 — owner Richard Tobon personally works to find you the best parts deals and keep your repair costs down.
+            Founder Enrique Tobon always strived to give his customers quality work and honest pricing. Today, his son Richard Tobon proudly carries that tradition forward.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mb-6 w-full max-w-xl sm:max-w-none mx-auto">
             <a
