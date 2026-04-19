@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { X } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface GalleryProps {
   onNavigate: (page: string) => void;
@@ -15,6 +15,7 @@ interface BeforeAfterItem {
 const Gallery = ({ onNavigate }: GalleryProps) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string>('');
+  const [activePair, setActivePair] = useState<{ item: BeforeAfterItem; side: 'before' | 'after' } | null>(null);
 
   const beforeAfterExamples: BeforeAfterItem[] = [
     {
@@ -112,8 +113,9 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
     '/481015812_1095793479227445_3493771979301799352_n.jpg'
   ];
 
-  const openLightbox = (image: string) => {
+  const openLightbox = (image: string, item?: BeforeAfterItem, side?: 'before' | 'after') => {
     setSelectedImage(image);
+    setActivePair(item && side ? { item, side } : null);
     setLightboxOpen(true);
     document.body.style.overflow = 'hidden';
   };
@@ -121,7 +123,14 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
   const closeLightbox = () => {
     setLightboxOpen(false);
     setSelectedImage('');
+    setActivePair(null);
     document.body.style.overflow = 'auto';
+  };
+
+  const switchSide = (side: 'before' | 'after') => {
+    if (!activePair) return;
+    setSelectedImage(activePair.item[side]);
+    setActivePair({ ...activePair, side });
   };
 
   return (
@@ -150,7 +159,7 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
                   <h3 className={`font-bold text-gray-900 ${item.description.length > 80 ? 'text-lg' : 'text-2xl'}`}>{item.description}</h3>
                 </div>
                 <div className="grid grid-cols-2">
-                  <div className="relative cursor-pointer overflow-hidden group" onClick={() => openLightbox(item.before)}>
+                  <div className="relative cursor-pointer overflow-hidden group" onClick={() => openLightbox(item.before, item, 'before')}>
                     <img
                       src={item.before}
                       alt={`Before - ${item.description}`}
@@ -158,7 +167,7 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
                     />
                     <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">BEFORE</span>
                   </div>
-                  <div className="relative cursor-pointer overflow-hidden group" onClick={() => openLightbox(item.after)}>
+                  <div className="relative cursor-pointer overflow-hidden group" onClick={() => openLightbox(item.after, item, 'after')}>
                     <img
                       src={item.after}
                       alt={`After - ${item.description}`}
@@ -224,6 +233,29 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
           >
             <X size={40} />
           </button>
+          {activePair?.side === 'before' && (
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white rounded-full p-3 transition-colors"
+              onClick={(e) => { e.stopPropagation(); switchSide('after'); }}
+            >
+              <ChevronRight size={36} />
+            </button>
+          )}
+          {activePair?.side === 'after' && (
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-40 text-white rounded-full p-3 transition-colors"
+              onClick={(e) => { e.stopPropagation(); switchSide('before'); }}
+            >
+              <ChevronLeft size={36} />
+            </button>
+          )}
+          {activePair && (
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+              <span className={`px-4 py-1 rounded-full text-sm font-bold ${activePair.side === 'before' ? 'bg-red-600 text-white' : 'bg-green-600 text-white'}`}>
+                {activePair.side === 'before' ? 'BEFORE' : 'AFTER'}
+              </span>
+            </div>
+          )}
           <img
             src={selectedImage}
             alt="Enlarged view"
