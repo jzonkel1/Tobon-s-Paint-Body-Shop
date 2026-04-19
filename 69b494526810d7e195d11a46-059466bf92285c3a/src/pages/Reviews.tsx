@@ -78,7 +78,10 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <section className="bg-gradient-to-r from-black to-gray-900 text-white py-16 lg:py-24">
+      <section
+        className="relative bg-cover bg-center text-white py-16 lg:py-24"
+        style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(/car5.jpg)' }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">
