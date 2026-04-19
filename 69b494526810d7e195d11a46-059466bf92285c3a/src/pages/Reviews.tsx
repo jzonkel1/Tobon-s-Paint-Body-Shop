@@ -8,50 +8,62 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
   const reviews = [
     {
       rating: 5,
+      name: 'Mark Lubianski',
       text: 'The paint job they did on my Dodge Mega Cab made it look like it just came off the showroom floor. They went above and beyond expectations.',
     },
     {
       rating: 5,
+      name: 'Cliff DeBerry',
       text: 'Great work done and they stuck to the price and deadline given.',
     },
     {
       rating: 5,
+      name: 'Aaron C',
       text: 'They even restored my headlights as a courtesy. Really appreciate the extra effort.',
     },
     {
       rating: 5,
+      name: 'paco bravo',
       text: 'Family business with professional work. Totally recommended.',
     },
     {
       rating: 5,
+      name: 'Richard Becerra',
       text: 'Richard was very quick and helpful when I stopped by for an estimate.',
     },
     {
       rating: 5,
+      name: 'Terry Langford',
       text: 'Excellent paint job and great customer service.',
     },
     {
       rating: 5,
+      name: 'Anna Mous',
       text: 'They repaired my vehicle quickly and the results looked fantastic.',
     },
     {
       rating: 5,
+      name: 'Nikitha Reddy',
       text: 'Honest work and fair pricing. I would definitely return for future repairs.',
     },
     {
       rating: 5,
+      name: 'R SANCHEZ',
       text: 'My car looked brand new after the repair. Great craftsmanship.',
     },
     {
       rating: 5,
+      name: 'Javier Jasso',
       text: 'Very friendly staff and quality body work. Highly recommend.',
     },
     {
       rating: 5,
+      name: 'Christina Mares',
       text: 'They matched the paint perfectly and the repair was finished when promised.',
     },
     {
       rating: 5,
+      name: 'John Mayorga',
       text: 'Great local body shop. Friendly staff and the work on my vehicle came out excellent.',
     },
   ];
@@ -103,7 +115,8 @@ export default function Reviews({ onNavigate }: ReviewsProps) {
                 <div className="mb-4">
                   <StarRating rating={review.rating} />
                 </div>
-                <p className="text-gray-700 italic">"{review.text}"</p>
+                <p className="text-gray-700 italic mb-4">"{review.text}"</p>
+                <p className="text-sm font-semibold text-gray-900">— {review.name}</p>
               </div>
             ))}
           </div>
