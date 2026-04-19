@@ -15,7 +15,6 @@ interface BeforeAfterItem {
 const Gallery = ({ onNavigate }: GalleryProps) => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string>('');
-  const [touchedCard, setTouchedCard] = useState<number | null>(null);
 
   const beforeAfterExamples: BeforeAfterItem[] = [
     {
@@ -127,194 +126,6 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <style>{`
-        /* === Before/After hover reveal cards (ba-*) === */
-        .ba-card {
-          position: relative;
-          width: 100%;
-          cursor: pointer;
-        }
-
-        .ba-front,
-        .ba-reveal {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-
-        /* ── Odd cards: curtain wipe ── */
-        .ba-card--wipe {
-          overflow: hidden;
-        }
-        .ba-card--wipe .ba-reveal {
-          transform: scaleX(0);
-          transform-origin: left center;
-          transition: transform 0.45s cubic-bezier(.4, 0, .2, 1);
-        }
-        .ba-card--wipe:hover .ba-reveal {
-          transform: scaleX(1);
-        }
-
-        /* ── Even cards: axis rotate swap ── */
-        .ba-card--flip {
-          perspective: 600px;
-          overflow: hidden;
-        }
-        .ba-card--flip .ba-front {
-          transform: rotateX(0deg);
-          transform-origin: bottom center;
-          transition: transform 0.4s ease;
-          backface-visibility: hidden;
-        }
-        .ba-card--flip .ba-reveal {
-          transform: rotateX(-90deg);
-          transform-origin: top center;
-          transition: transform 0.4s ease, opacity 0.4s ease;
-          backface-visibility: hidden;
-          opacity: 0;
-        }
-        .ba-card--flip:hover .ba-front {
-          transform: rotateX(90deg);
-        }
-        .ba-card--flip:hover .ba-reveal {
-          transform: rotateX(0deg);
-          opacity: 1;
-        }
-
-        /* ── Pill labels ── */
-        .ba-label {
-          position: absolute;
-          top: 1rem;
-          left: 1rem;
-          padding: 0.3rem 0.85rem;
-          border-radius: 9999px;
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 0.06em;
-          z-index: 20;
-          pointer-events: none;
-          transition: opacity 0.2s ease;
-          box-shadow: 0 1px 4px rgba(0,0,0,0.35);
-        }
-        .ba-label--before {
-          background: #dc2626;
-          color: #fff;
-          opacity: 1;
-        }
-        .ba-label--after {
-          background: #16a34a;
-          color: #fff;
-          opacity: 0;
-        }
-        .ba-card:hover .ba-label--before,
-        .ba-card.is-revealed .ba-label--before {
-          opacity: 0;
-        }
-        .ba-card:hover .ba-label--after,
-        .ba-card.is-revealed .ba-label--after {
-          opacity: 1;
-        }
-
-        /* ── Touch tap reveal (mirrors hover states) ── */
-        .ba-card--wipe.is-revealed .ba-reveal {
-          transform: scaleX(1);
-        }
-        .ba-card--flip.is-revealed .ba-front {
-          transform: rotateX(90deg);
-        }
-        .ba-card--flip.is-revealed .ba-reveal {
-          transform: rotateX(0deg);
-          opacity: 1;
-        }
-
-        /* ── Mobile tap hint ── */
-        .ba-tap-hint {
-          position: absolute;
-          bottom: 0.75rem;
-          left: 50%;
-          transform: translateX(-50%);
-          background: rgba(0, 0, 0, 0.65);
-          color: #fff;
-          font-size: 0.7rem;
-          font-weight: 700;
-          letter-spacing: 0.08em;
-          padding: 0.25rem 0.75rem;
-          border-radius: 9999px;
-          z-index: 25;
-          pointer-events: none;
-          text-transform: uppercase;
-          white-space: nowrap;
-          transition: opacity 0.2s ease;
-        }
-        .ba-card.is-revealed .ba-tap-hint {
-          opacity: 0;
-        }
-        /* Hide hint on devices that support hover (desktops) */
-        @media (hover: hover) and (pointer: fine) {
-          .ba-tap-hint { display: none; }
-        }
-      `}</style>
-      <style>{`
-        /* === Zoom + fade overlay (ba-zoom-*) === */
-        .ba-zoom-wrap {
-          overflow: hidden;
-          cursor: pointer;
-          background: transparent;
-        }
-        /* Front (before) wrapper hugs the image's natural shape */
-        .ba-zoom-wrap.ba-front {
-          position: relative;
-          display: flex;
-          justify-content: center;
-        }
-        .ba-zoom-wrap.ba-front img {
-          width: auto;
-          height: auto;
-          max-width: 100%;
-          max-height: 70vh;
-          display: block;
-          transition: transform 0.4s ease;
-        }
-        /* Reveal (after) wrapper overlays the exact same footprint */
-        .ba-zoom-wrap.ba-reveal {
-          display: flex;
-          justify-content: center;
-        }
-        .ba-zoom-wrap.ba-reveal img {
-          width: auto;
-          height: auto;
-          max-width: 100%;
-          max-height: 70vh;
-          display: block;
-          transition: transform 0.4s ease;
-        }
-        .ba-zoom-wrap:hover img {
-          transform: scale(1.04);
-        }
-        /* zoom-wrap img base rule kept for overlay target; img rules above handle sizing */
-        .ba-zoom-overlay {
-          position: absolute;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.35);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #fff;
-          font-size: 14px;
-          font-weight: 500;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          pointer-events: none;
-        }
-        .ba-zoom-wrap:hover .ba-zoom-overlay {
-          opacity: 1;
-        }
-      `}</style>
       <div
         className="relative bg-cover bg-center py-16 sm:py-24 lg:py-32 text-white"
         style={{
@@ -338,27 +149,23 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
                 <div className="p-6 text-center border-b border-gray-200">
                   <h3 className={`font-bold text-gray-900 ${item.description.length > 80 ? 'text-lg' : 'text-2xl'}`}>{item.description}</h3>
                 </div>
-                <div
-                  className={`ba-card ${item.id % 2 !== 0 ? 'ba-card--wipe' : 'ba-card--flip'}${touchedCard === item.id ? ' is-revealed' : ''}`}
-                  onClick={() => setTouchedCard(prev => prev === item.id ? null : item.id)}
-                >
-                  <div className="ba-zoom-wrap ba-front" onClick={(e) => { e.stopPropagation(); openLightbox(item.before); }}>
+                <div className="grid grid-cols-2">
+                  <div className="relative cursor-pointer overflow-hidden group" onClick={() => openLightbox(item.before)}>
                     <img
                       src={item.before}
                       alt={`Before - ${item.description}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="ba-zoom-overlay">Click to enlarge</div>
+                    <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">BEFORE</span>
                   </div>
-                  <div className="ba-zoom-wrap ba-reveal" onClick={(e) => { e.stopPropagation(); openLightbox(item.after); }}>
+                  <div className="relative cursor-pointer overflow-hidden group" onClick={() => openLightbox(item.after)}>
                     <img
                       src={item.after}
                       alt={`After - ${item.description}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
-                    <div className="ba-zoom-overlay">Click to enlarge</div>
+                    <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">AFTER</span>
                   </div>
-                  <div className="ba-label ba-label--before">BEFORE</div>
-                  <div className="ba-label ba-label--after">AFTER</div>
-                  <div className="ba-tap-hint">Tap to reveal after →</div>
                 </div>
               </div>
             ))}
