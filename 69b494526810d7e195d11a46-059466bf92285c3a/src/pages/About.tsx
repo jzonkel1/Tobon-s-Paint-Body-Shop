@@ -39,10 +39,10 @@ export default function About({ onNavigate }: AboutProps) {
               </div>
               <div className="space-y-4 text-gray-700 text-lg">
                 <p>
-                  Since opening our doors in <span className="font-bold text-red-600">1989</span>, <span className="tobons-brand">Tobon's Paint & Body Shop</span> has been a family-owned cornerstone of the Corpus Christi community. Owner <span className="font-bold text-gray-900">Richard Tobon</span> founded the shop and has been hands-on ever since — bringing his personal commitment to quality and fairness to every single repair.
+                  <span className="tobons-brand">Tobon's Paint & Body Shop</span> was founded in <span className="font-bold text-red-600">1989</span> by <span className="font-bold text-gray-900">Enrique Tobon</span>, who built the business on a simple promise: quality work and honest pricing for every customer. That commitment made Tobon's a trusted name in Corpus Christi for decades.
                 </p>
                 <p>
-                  Richard is known throughout the Coastal Bend for going the extra mile to save his customers money. He personally sources parts, shopping around to find the best prices so that customers never overpay. It's the kind of care you only get from a family business where the owner's name is on the building.
+                  Today, Enrique's son <span className="font-bold text-gray-900">Richard Tobon</span> proudly carries that tradition forward. Richard is hands-on every day, personally involved in every repair and known throughout the Coastal Bend for going the extra mile to save customers money — sourcing parts himself to make sure no one overpays.
                 </p>
                 <p>
                   For over 35 years, we've built our reputation on quality workmanship, honest service, and customer satisfaction. Our team combines traditional craftsmanship with modern technology to deliver outstanding results on every job.
@@ -97,7 +97,7 @@ export default function About({ onNavigate }: AboutProps) {
               {
                 icon: Users,
                 title: 'Family Owned',
-                description: 'Owner Richard Tobon is personally involved in the shop every day — you\'re dealing with family, not a franchise.',
+                description: 'Founded by Enrique Tobon and carried forward by his son Richard — you\'re dealing with family, not a franchise.',
               },
               {
                 icon: DollarSign,
@@ -135,7 +135,7 @@ export default function About({ onNavigate }: AboutProps) {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                'Family owned & operated — Richard Tobon is here every day',
+                'Family legacy — founded by Enrique Tobon, now led by his son Richard',
                 'Over 35 years of proven experience',
                 'Richard personally sources parts to get you the best price',
                 'Highly skilled and certified technicians',
