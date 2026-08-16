@@ -1,7 +1,12 @@
 [build]
   base = "69b494526810d7e195d11a46-059466bf92285c3a"
-  command = "npm run build"
+  # Kept in sync with the netlify.toml inside the base directory — see the
+  # comment there for why Chrome is installed explicitly before the build.
+  command = "npx puppeteer browsers install chrome || true; npm run build"
   publish = "dist"
+
+[build.environment]
+  PUPPETEER_CACHE_DIR = "/opt/build/cache/puppeteer"
 
 [[redirects]]
   from = "/*"

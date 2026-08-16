@@ -33,6 +33,45 @@ const TITLES: Record<string, string> = {
   privacy: "Privacy Policy | Tobon's Paint & Body Shop",
 };
 
+const DESCRIPTIONS: Record<string, string> = {
+  home: "Expert auto body repair, collision repair, auto painting, dent removal, and vehicle detailing in Corpus Christi, TX. Serving the community since 1989. Call 361-887-6606 for free estimates.",
+  services: "Collision repair, auto painting, dent removal, vehicle detailing, and headlight restoration in Corpus Christi, TX. Free estimates and insurance claim help. Call 361-887-6606.",
+  about: "Tobon's Paint & Body Shop was founded in Corpus Christi in 1989 by Enrique Tobon. His son Richard carries the same promise forward: quality work and honest pricing.",
+  gallery: "Before and after photos of collision repairs, paint work, and restorations completed at Tobon's Paint & Body Shop in Corpus Christi, Texas.",
+  reviews: "What customers say about Tobon's Paint & Body Shop in Corpus Christi — rated 4.5 stars across 99+ Google reviews.",
+  contact: "Visit Tobon's Paint & Body Shop at 1104 S Port Ave, Corpus Christi, TX 78405. Open Monday through Friday, 8:00 AM to 6:00 PM. Call 361-887-6606 for a free estimate.",
+  privacy: "How Tobon's Paint & Body Shop collects, uses, and protects your information when you request an estimate.",
+};
+
+const SITE = 'https://tobonsautopaintandbody.com';
+
+// The prerender step bakes whatever is in the DOM into each route's static
+// HTML, so setting these per page is what gives every URL its own listing.
+function setMeta(selector: string, attr: 'name' | 'property' | 'rel', key: string, value: string) {
+  let el = document.head.querySelector<HTMLElement>(selector);
+  if (!el) {
+    el = document.createElement(attr === 'rel' ? 'link' : 'meta');
+    el.setAttribute(attr === 'rel' ? 'rel' : attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute(attr === 'rel' ? 'href' : 'content', value);
+}
+
+function applyPageMeta(page: string) {
+  const title = TITLES[page] || TITLES.home;
+  const description = DESCRIPTIONS[page] || DESCRIPTIONS.home;
+  const url = SITE + (PATHS[page] === '/' ? '/' : PATHS[page]);
+
+  document.title = title;
+  setMeta('meta[name="description"]', 'name', 'description', description);
+  setMeta('link[rel="canonical"]', 'rel', 'canonical', url);
+  setMeta('meta[property="og:title"]', 'property', 'og:title', title);
+  setMeta('meta[property="og:description"]', 'property', 'og:description', description);
+  setMeta('meta[property="og:url"]', 'property', 'og:url', url);
+  setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title);
+  setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description);
+}
+
 function pageFromPath(pathname: string): string {
   const clean = '/' + pathname.replace(/^\/+|\/+$/g, '');
   const match = Object.keys(PATHS).find((page) => PATHS[page] === clean);
@@ -51,7 +90,7 @@ function App() {
   };
 
   useEffect(() => {
-    document.title = TITLES[currentPage] || TITLES.home;
+    applyPageMeta(currentPage);
   }, [currentPage]);
 
   useEffect(() => {

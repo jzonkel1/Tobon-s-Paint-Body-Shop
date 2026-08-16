@@ -1,11 +1,21 @@
 [build]
-  command = "npm run build"
+  # Netlify restores a cached node_modules, which skips puppeteer's postinstall
+  # Chrome download and makes the prerender step silently no-op. Installing
+  # Chrome explicitly (into a cached dir, so it downloads once) prevents that.
+  # `|| true` keeps a download failure from aborting a client deploy.
+  command = "npx puppeteer browsers install chrome || true; npm run build"
   publish = "dist"
+
+[build.environment]
+  PUPPETEER_CACHE_DIR = "/opt/build/cache/puppeteer"
 
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Prerendered routes ship as real files (dist/services/index.html etc.) and
+# Netlify prefers a matching static file over this rewrite. The rewrite stays
+# as the fallback for anything not prerendered.
 [[redirects]]
   from = "/*"
   to = "/index.html"
