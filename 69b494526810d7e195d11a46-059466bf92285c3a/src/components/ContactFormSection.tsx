@@ -167,9 +167,14 @@ function ContactForm({ compact = false, onClose }: ContactFormSectionProps) {
               : 'Click to upload photos of the damage'}
           </span>
         </button>
+        {/* name="photos" matters even though we build the FormData by hand:
+            the prerendered HTML contains this rendered form, and Netlify's
+            form parser reads it. Without the name it registers the form
+            without a photos field and drops customers' damage photos. */}
         <input
           ref={fileInputRef}
           type="file"
+          name="photos"
           accept="image/*"
           multiple
           className="hidden"
