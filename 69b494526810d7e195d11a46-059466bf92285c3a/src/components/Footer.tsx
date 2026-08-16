@@ -16,7 +16,9 @@ export default function Footer({ onNavigate }: FooterProps) {
               src="/body_shop_car_repair.png"
               alt="Tobon's Paint & Body Shop"
               className="h-20 w-auto mb-4"
-            />
+            loading="lazy"
+            decoding="async"
+          />
             <h3 className="text-xl font-bold text-red-600 mb-2 tobons-brand">Tobon's Paint & Body Shop</h3>
             <p className="text-gray-400 text-sm">
               Family owned & operated since 1989. Professional auto body repair in Corpus Christi.
@@ -178,7 +180,9 @@ export default function Footer({ onNavigate }: FooterProps) {
                 className="bg-white hover:bg-gray-100 w-12 h-12 rounded-full transition-colors shadow-lg flex items-center justify-center"
                 aria-label="Visit our Yelp page"
               >
-                <img src="/19b872cc66b8bfc0fb8d947e8728f183.svg" alt="Yelp" className="w-7 h-7" />
+                <img src="/19b872cc66b8bfc0fb8d947e8728f183.svg" alt="Yelp" className="w-7 h-7" loading="lazy"
+            decoding="async"
+          />
               </a>
               <a
                 href="https://autorepairscore.com/tx/corpus-christi/tobons-paint-body-shop-corpus-christi-texas"
@@ -187,7 +191,9 @@ export default function Footer({ onNavigate }: FooterProps) {
                 className="bg-white hover:bg-gray-100 w-12 h-12 rounded-full transition-colors shadow-lg flex items-center justify-center"
                 aria-label="Visit our AutoRepairScore page"
               >
-                <img src="/447210309_399267936448192_2073111667863481145_n.jpg" alt="AutoRepairScore" className="w-7 h-7" />
+                <img src="/447210309_399267936448192_2073111667863481145_n.jpg" alt="AutoRepairScore" className="w-7 h-7" loading="lazy"
+            decoding="async"
+          />
               </a>
             </div>
             <div className="text-center space-y-2">

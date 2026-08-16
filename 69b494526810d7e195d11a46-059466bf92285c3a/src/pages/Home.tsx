@@ -41,7 +41,7 @@ export default function Home({ onNavigate }: HomeProps) {
     {
       title: 'Auto Painting',
       description: 'Premium paint matching and finishing for a flawless look',
-      image: 'https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/service-auto-painting.jpg',
       icon: Sparkles,
     },
     {
@@ -53,7 +53,7 @@ export default function Home({ onNavigate }: HomeProps) {
     {
       title: 'Detail & Restoration',
       description: 'Complete detailing services for a showroom-quality finish',
-      image: 'https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/service-detailing.jpg',
       icon: Sparkles,
     },
   ];
@@ -72,7 +72,8 @@ export default function Home({ onNavigate }: HomeProps) {
       <section
         className="relative min-h-[600px] lg:min-h-[700px] flex items-center justify-center bg-cover bg-center py-16 lg:py-20"
         style={{
-          backgroundImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/13741311/pexels-photo-13741311.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundColor: '#0f0f0f',
+          backgroundImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url(/hero-home.jpg)',
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -158,7 +159,9 @@ export default function Home({ onNavigate }: HomeProps) {
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  loading="lazy"
+            decoding="async"
+          />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                     <service.icon className="mb-3 text-red-500" size={36} />
@@ -203,7 +206,9 @@ export default function Home({ onNavigate }: HomeProps) {
                       src={repair.before}
                       alt="Before repair"
                       className="w-full h-64 object-cover"
-                    />
+                    loading="lazy"
+            decoding="async"
+          />
                   </div>
                   <div className="relative">
                     <div className="absolute top-3 left-3 bg-green-600 text-white px-3 py-1 rounded-md text-xs font-bold z-10">
@@ -213,7 +218,9 @@ export default function Home({ onNavigate }: HomeProps) {
                       src={repair.after}
                       alt="After repair"
                       className="w-full h-64 object-cover"
-                    />
+                    loading="lazy"
+            decoding="async"
+          />
                   </div>
                 </div>
                 <div className="p-4 text-center">
@@ -280,8 +287,10 @@ export default function Home({ onNavigate }: HomeProps) {
             </div>
             <div className="order-1 lg:order-2">
               <img
-                src="https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="/shop-interior.jpg"
                 alt="Auto body repair shop"
+                loading="lazy"
+                decoding="async"
                 className="rounded-2xl shadow-2xl"
               />
             </div>
@@ -364,7 +373,9 @@ export default function Home({ onNavigate }: HomeProps) {
                   src={image}
                   alt={`Recent project ${index + 1}`}
                   className="w-full h-full object-cover"
-                />
+                loading="lazy"
+            decoding="async"
+          />
               </div>
             ))}
           </div>
@@ -383,7 +394,8 @@ export default function Home({ onNavigate }: HomeProps) {
       <section
         className="relative py-24 bg-cover bg-center"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundColor: '#0f0f0f',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/home-cta-bg.jpg)',
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative z-10">

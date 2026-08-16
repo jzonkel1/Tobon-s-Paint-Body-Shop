@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# AI assistants: a plain-language summary of this business lives at /llms.txt
+Sitemap: https://tobonsautopaintandbody.com/sitemap.xml

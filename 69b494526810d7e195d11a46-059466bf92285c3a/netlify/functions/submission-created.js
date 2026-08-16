@@ -26,6 +26,9 @@ const SHOP_PHONE = '361-887-6606';
 const SHOP_PHONE_TEL = '3618876606';
 const BRAND_RED = '#dc2626';
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
+// Email clients can't read relative paths, so the logo is served from the live site.
+const SITE_URL = 'https://tobonsautopaintandbody.com';
+const LOGO_URL = `${SITE_URL}/email-logo.png`;
 
 export const handler = async (event) => {
   let payload;
@@ -170,9 +173,10 @@ function customerHtml(firstName, message, photoCount) {
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:24px 0;">
     <tr><td align="center">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);">
-        <tr><td style="background:${BRAND_RED};padding:22px 32px;">
-          <span style="color:#ffffff;font-size:20px;font-weight:800;letter-spacing:-.01em;">${SHOP_NAME}</span>
-          <span style="display:block;color:#fecaca;font-size:12px;margin-top:2px;">Auto Body Repair • Corpus Christi, TX • Since 1989</span>
+        <tr><td align="center" style="background:#0d0d0d;border-bottom:4px solid ${BRAND_RED};padding:26px 32px 20px;">
+          <img src="${LOGO_URL}" width="150" alt="${SHOP_NAME}"
+               style="display:block;margin:0 auto 10px;width:150px;max-width:60%;height:auto;border:0;outline:none;text-decoration:none;" />
+          <span style="display:block;color:#9ca3af;font-size:12px;letter-spacing:.06em;text-transform:uppercase;">Auto Body Repair &bull; Corpus Christi, TX &bull; Since 1989</span>
         </td></tr>
         <tr><td style="padding:28px 32px 4px;">
           <h1 style="margin:0 0 10px;font-size:22px;color:#111827;">Thanks, ${esc(firstName)} — we got your request!</h1>
@@ -234,8 +238,17 @@ function ownerHtml({ customerName, customerPhone, customerEmail, message, photoL
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:24px 0;">
     <tr><td align="center">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);">
-        <tr><td style="background:#111827;padding:18px 28px;">
-          <span style="color:#ffffff;font-size:17px;font-weight:800;">🔔 New Estimate Request</span>
+        <tr><td style="background:#0d0d0d;border-bottom:4px solid ${BRAND_RED};padding:16px 28px;">
+          <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="padding-right:14px;">
+              <img src="${LOGO_URL}" width="52" alt="${SHOP_NAME}"
+                   style="display:block;width:52px;height:auto;border:0;outline:none;" />
+            </td>
+            <td style="vertical-align:middle;">
+              <span style="color:#ffffff;font-size:17px;font-weight:800;">New Estimate Request</span>
+              <span style="display:block;color:#9ca3af;font-size:12px;margin-top:2px;">From the website form</span>
+            </td>
+          </tr></table>
         </td></tr>
         <tr><td style="padding:20px 28px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">

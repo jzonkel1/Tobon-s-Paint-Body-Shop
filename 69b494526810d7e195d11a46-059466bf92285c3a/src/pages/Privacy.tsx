@@ -12,7 +12,7 @@ export default function Privacy({ onNavigate }: PrivacyProps) {
     <div className="min-h-screen bg-gray-50">
       <section
         className="relative bg-cover bg-center text-white py-16 lg:py-20"
-        style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(/car3.jpg)' }}
+        style={{ backgroundColor: '#0f0f0f', backgroundImage: 'linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(/car3.jpg)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

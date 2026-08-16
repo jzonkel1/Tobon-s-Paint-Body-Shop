@@ -138,7 +138,8 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
       <div
         className="relative bg-cover bg-center py-16 sm:py-24 lg:py-32 text-white"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundColor: '#0f0f0f',
+          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/hero-gallery.jpg)',
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -164,7 +165,9 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
                       src={item.before}
                       alt={`Before - ${item.description}`}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
+                    loading="lazy"
+            decoding="async"
+          />
                     <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">BEFORE</span>
                   </div>
                   <div className="relative cursor-pointer overflow-hidden group" onClick={() => openLightbox(item.after, item, 'after')}>
@@ -172,7 +175,9 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
                       src={item.after}
                       alt={`After - ${item.description}`}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
+                    loading="lazy"
+            decoding="async"
+          />
                     <span className="absolute top-3 left-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">AFTER</span>
                   </div>
                 </div>
@@ -196,7 +201,9 @@ const Gallery = ({ onNavigate }: GalleryProps) => {
                   src={image}
                   alt={`Recent work ${index + 1}`}
                   className="w-full h-full object-cover"
-                />
+                loading="lazy"
+            decoding="async"
+          />
               </div>
             ))}
           </div>

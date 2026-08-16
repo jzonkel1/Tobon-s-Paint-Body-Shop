@@ -5,7 +5,7 @@ export default function Contact() {
     <div className="min-h-screen bg-gray-50">
       <section
         className="relative bg-cover bg-center text-white py-16 lg:py-24"
-        style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(/car4.jpg)' }}
+        style={{ backgroundColor: '#0f0f0f', backgroundImage: 'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(/car4.jpg)' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -135,7 +135,9 @@ export default function Contact() {
                     className="bg-white hover:bg-gray-100 w-12 h-12 rounded-full transition-colors shadow-lg flex items-center justify-center"
                     aria-label="Visit our Yelp page"
                   >
-                    <img src="/19b872cc66b8bfc0fb8d947e8728f183.svg" alt="Yelp" className="w-7 h-7" />
+                    <img src="/19b872cc66b8bfc0fb8d947e8728f183.svg" alt="Yelp" className="w-7 h-7" loading="lazy"
+            decoding="async"
+          />
                   </a>
                   <a
                     href="https://autorepairscore.com/tx/corpus-christi/tobons-paint-body-shop-corpus-christi-texas"
@@ -144,7 +146,9 @@ export default function Contact() {
                     className="bg-white hover:bg-gray-100 w-12 h-12 rounded-full transition-colors shadow-lg flex items-center justify-center"
                     aria-label="Visit our AutoRepairScore page"
                   >
-                    <img src="/447210309_399267936448192_2073111667863481145_n.jpg" alt="AutoRepairScore" className="w-7 h-7" />
+                    <img src="/447210309_399267936448192_2073111667863481145_n.jpg" alt="AutoRepairScore" className="w-7 h-7" loading="lazy"
+            decoding="async"
+          />
                   </a>
                 </div>
               </div>
@@ -179,7 +183,9 @@ export default function Contact() {
                   src="/body_shop_car_repair.png"
                   alt="Tobon's Paint & Body Shop"
                   className="h-36 w-auto drop-shadow-xl mb-4"
-                />
+                loading="lazy"
+            decoding="async"
+          />
                 <p className="text-white text-lg font-bold tracking-wide text-center tobons-brand">Tobon's Paint & Body Shop</p>
                 <p className="text-red-500 text-sm font-medium mt-1">Serving Corpus Christi Since 1989</p>
               </div>

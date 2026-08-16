@@ -179,7 +179,9 @@ function ContactForm({ compact = false, onClose }: ContactFormSectionProps) {
           <div className="flex flex-wrap gap-2 mt-3">
             {previews.map((src, i) => (
               <div key={i} className="relative w-20 h-20 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-                <img src={src} alt={`preview ${i + 1}`} className="w-full h-full object-cover" />
+                <img src={src} alt={`preview ${i + 1}`} className="w-full h-full object-cover" loading="lazy"
+            decoding="async"
+          />
                 <button
                   type="button"
                   onClick={() => removePhoto(i)}
