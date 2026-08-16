@@ -8,7 +8,7 @@ export default function Footer({ onNavigate }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white border-t-4 border-red-600">
+    <footer id="site-footer" className="bg-black text-white border-t-4 border-red-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -190,9 +190,33 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <img src="/447210309_399267936448192_2073111667863481145_n.jpg" alt="AutoRepairScore" className="w-7 h-7" />
               </a>
             </div>
-            <p className="text-gray-400 text-sm">
-              &copy; {currentYear} <span className="tobons-brand">Tobon's Paint & Body Shop</span>. All rights reserved. | Family Owned & Operated | Serving Corpus Christi since 1989
-            </p>
+            <div className="text-center space-y-2">
+              <p className="text-gray-400 text-sm">
+                &copy; {currentYear} <span className="tobons-brand">Tobon's Paint & Body Shop</span>. All rights reserved. | Family Owned & Operated | Serving Corpus Christi since 1989
+              </p>
+              <p className="text-gray-400 text-sm">
+                <button
+                  onClick={() => {
+                    onNavigate('privacy');
+                    window.scrollTo(0, 0);
+                  }}
+                  className="underline hover:text-red-600 transition-colors"
+                >
+                  Privacy Policy
+                </button>
+              </p>
+              <p className="text-gray-500 text-sm">
+                Website by{' '}
+                <a
+                  href="https://zonkelmedia.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-red-600 font-bold hover:text-red-500 transition-colors"
+                >
+                  Zonkel Media
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
